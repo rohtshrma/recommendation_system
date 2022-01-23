@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import fs from "fs";
 import csv from "csvtojson";
+import Formdata from "./models/Form.js";
 
 
 const csvFilePath="Book1.csv";
@@ -19,30 +20,13 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 
 
 
-const Schema = mongoose.Schema;
-const ObjectId = mongoose.Types.ObjectId
-const formdata=new Schema({
-	ID:String,
-	Question1:String,
-	Question2:String,
-  Question3:String,
-	Product:String,
-  Price:String,
-  Valueformoney:String,
-  Brand:String,
-  AfterSales:String,
-  Score:String,
-  Amazon:String,
-  Flipkart:String,
-  Reliance:String
-})
-const Formdata=mongoose.model('formdata',formdata);
+
 
 
 const data=await csv().fromFile(csvFilePath);
 
 
-
+/* Uncomment these code to save data in db
 for(var i=0;i<data.length;i++)
 {
   const formdata1=new Formdata(data[i]);
@@ -58,6 +42,21 @@ formdata1.save((error)=>{
 })
 
 }
+*/
+
+app.get("/answer/:ans1/:ans2/:ans3/:product",(req,res)=>{
+
+
+  Formdata.find({Question1:req.params.ans1, Question2:req.params.ans2, Question3:req.params.ans3, Product:req.params.product})
+  .then((data) => {
+    console.log('Data: ', data);
+    res.json(data);
+})
+.catch((error) => {
+    console.log('error happened',error);
+});
+  
+})
 
 
 
