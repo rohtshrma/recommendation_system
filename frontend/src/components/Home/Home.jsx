@@ -1,9 +1,11 @@
 import React from "react";
-import Header from '../Header/Header'
+import Carousel from "../Carousel/Carousel";
+import Header from "../Header/Header";
 function Home() {
   return (
     <>
-      <Header/>
+      <Header />
+      <Carousel />
     </>
   );
 }
