@@ -9,7 +9,7 @@ const Carousel = () => {
   return (
     <div>
       <OwlCarousel
-        items={3}
+        items={5}
         className="owl-theme"
         loop
         nav
