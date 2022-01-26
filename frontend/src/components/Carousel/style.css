@@ -15,7 +15,7 @@
   border: none;
   outline: 0;
   padding: 12px;
-  color: white;
+  /* color: white; */
   background-color: #000;
   text-align: center;
   cursor: pointer;
@@ -27,5 +27,39 @@
   opacity: 0.7;
 }
 .card .img {
-  height: 300px;
+  height: 250px;
 }
+.card p{
+  color: rgb(54, 53, 53);
+}
+.card h1{
+  color: #000;
+  font-size: 25px;
+  padding-top: 10px;
+}
+/* carousel next button  start */
+
+.owl-dots{
+  display: none;
+}
+.owl-prev span{
+  display: none;
+
+}
+.owl-nav button{
+  position: absolute;
+  top: 150px;
+  left: 93%;
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+}
+ .owl-next span{
+  font-size: 100px;
+  padding-bottom: 30px;
+}
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background-color: transparent;
+  color: rgb(116, 109, 109);
+}
+/* carousel next button end */

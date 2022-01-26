@@ -5,8 +5,9 @@ function Home() {
   return (
     <>
       <Header />
+      <br/>
       <Carousel />
-      <h1>dhhkchjsdhchj</h1>
+    
     </>
   );
 }
