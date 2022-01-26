@@ -6,6 +6,7 @@ function Home() {
     <>
       <Header />
       <Carousel />
+      <h1>dhhkchjsdhchj</h1>
     </>
   );
 }
