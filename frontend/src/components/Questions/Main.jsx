@@ -1,24 +1,29 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "./style.css";
+import children_img from './children.png';
 
 function Main() {
   return (
+    <> 
     <div className="question-container">
       <div className="top-bar sidebar">
-        <p>Children</p>
-        <p>Why does this question matter?</p>
+        <p style={{fontSize:"20px",fontWeight:"bold", paddingTop:"10px"}}>Children</p>
+        {/* <p>Why does this question matter?</p> */}
       </div>
       <div className="question-ans">
-        <p>Do you have children in your home?</p>
+        <p  style={{ fontSize:"26px",fontWeight:"bolder",marginTop:"8px"}}>
+        Do you have children in your home?</p>
+        <img src={children_img} alt="" />
         <div>
-          <div className="ans-options">
+          <div className="ans-options" style={{marginTop:"20px"}}>
             <input type="radio" />
-            <p>Yes I would like to protect them</p>
+            <p  style={{ fontSize:"22px",fontWeight:"500" , marginLeft:"20px"}}>
+            Yes I would like to protect them</p>
           </div>
           <div className="ans-options">
-            <input type="radio" />
-            <p>NO</p>
+            <input  type="radio" />
+            <p style={{ fontSize:"22px",fontWeight:"500", marginLeft:"20px"}}>NO</p>
           </div>
         </div>
       </div>
@@ -32,14 +37,16 @@ function Main() {
         </Button>
       </div>
 
-      <div className="video">
+      
+    </div>
+    <div className="video my-3">
         <iframe
           width="420"
           height="315"
           src="https://www.youtube.com/embed/tgbNymZ7vqY"
         ></iframe>
       </div>
-    </div>
+      </>
   );
 }
 

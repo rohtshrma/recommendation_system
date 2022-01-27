@@ -6,6 +6,7 @@ import Pic from "../images/img-1.jpg";
 import "./style.css";
 
 const Carousel = () => {
+  
   return (
     <div>
       <OwlCarousel
