@@ -1,0 +1,28 @@
+
+
+.right_recom{
+    border: 2px solid lightslategrey;
+}
+
+.headingPart h5 {
+    color:green;
+    font-size: 30px;
+    background-color: #D3DEDC;
+    padding: 2rem;
+}
+
+.recoms{
+    padding-bottom: 30px;
+}
+
+.para_recom{
+    padding: 30px;
+}
+
+.optionsName{
+    color: maroon;
+}
+
+.recomContent{
+    padding-top: 30px;
+}
