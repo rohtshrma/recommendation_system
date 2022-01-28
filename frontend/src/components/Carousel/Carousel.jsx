@@ -6,10 +6,11 @@ import Pic from "../images/img-1.jpg";
 import "./style.css";
 
 const Carousel = () => {
+  
   return (
     <div>
       <OwlCarousel
-        items={3}
+        items={5}
         className="owl-theme"
         loop
         nav

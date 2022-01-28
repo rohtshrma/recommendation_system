@@ -5,7 +5,10 @@ function Home() {
   return (
     <>
       <Header />
+
+      
       <Carousel />
+    
     </>
   );
 }

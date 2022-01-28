@@ -1,12 +1,22 @@
 .company_logo {
     width:100px;
+    background-color: #f8f9fa !important;
+}
+
+.navbar-brand{
+font-size: 30px;
+font-weight: 700;
+font-family: 'Sedgwick Ave', cursive;}
+
+.bannerImage{
+  width: 400px;
 }
 
 @import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 .static-slider10 {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-	padding: 5% 0;
+	padding: 3% 0;
   background-size: cover;
   background-position: center center;
 }
