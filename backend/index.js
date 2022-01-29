@@ -4,9 +4,11 @@ import cors from "cors";
 import fs from "fs";
 import csv from "csvtojson";
 import Formdata from "./models/Form.js";
+import Questiondata from "./models/Questions.js"
 
 
 const csvFilePath="Book1.csv";
+const questionFilePath="Questions.csv";
 
 
 
@@ -24,8 +26,11 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 
 
 const data=await csv().fromFile(csvFilePath);
+const questiondata=await csv().fromFile(questionFilePath);
 
 
+
+console.log(questiondata);
 /* Uncomment these code to save data in db
 for(var i=0;i<data.length;i++)
 {
@@ -37,12 +42,48 @@ formdata1.save((error)=>{
 			console.log(error);
 		}
 	else{
-		console.log("Successful");
+		console.log("Product data Successfully saved");
 	}
 })
 
 }
+Uncomment these code to save question into db
+
+
+for(var i=0;i<questiondata.length;i++)
+{
+  const questiondata1=new Questiondata(questiondata[i]);
+
+questiondata1.save((error)=>{
+	if(error)
+		{
+			console.log(error);
+		}
+	else{
+		console.log("Question Successfully saved");
+	}
+})
+}
 */
+
+app.get("/getquestions",(req,res)=>{
+  Questiondata.find({  })
+      .then((data) => {
+          console.log('Data: ', data);
+          res.json(data);
+      })
+      .catch((error) => {
+          console.log('error happened',error);
+      });
+})
+
+
+
+
+
+
+
+
 
 app.get("/answer/:ans1/:ans2/:ans3/:product",(req,res)=>{
 
