@@ -2,10 +2,12 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "./style.css";
 import children_img from './children.png';
+import Paper from '@mui/material/Paper';
 
 function Main() {
   return (
     <> 
+       <Paper >
     <div className="question-container">
       <div className="top-bar sidebar">
         <p style={{fontSize:"20px",fontWeight:"bold", paddingTop:"10px"}}>Children</p>
@@ -28,6 +30,14 @@ function Main() {
         </div>
       </div>
 
+      <Paper>
+      <div className="content_side">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio autem iste corporis quo repellendus magnam itaque et, nihil rerum possimus reprehenderit vitae mollitia, dolore laboriosam suscipit deleniti quam inventore. Repudiandae.
+      </p>
+         
+      </div>
+      </Paper>
+
       <div className="navBtns">
         <Button variant="outline-primary" className="navBtn">
           Prev
@@ -39,6 +49,7 @@ function Main() {
 
       
     </div>
+    </Paper>
     <div className="video my-3">
         <iframe
           width="420"
@@ -46,6 +57,7 @@ function Main() {
           src="https://www.youtube.com/embed/tgbNymZ7vqY"
         ></iframe>
       </div>
+      
       </>
   );
 }
