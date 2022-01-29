@@ -5,9 +5,11 @@
   background-color: #d3dedc;
   border: 1px solid;
   border-radius: 5px;
+  
 }
 .mainContainer {
   padding: 20px; 
+ 
  
 }
 button {
@@ -16,7 +18,15 @@ button {
   background: none;
   color: blue;
   border-radius: 5px;
+
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  color: royalblue;
+  
 }
+
 
 .active {
   background-color: #2f3a8f;
@@ -67,4 +77,16 @@ input[type=radio] {
   margin-left: 7px; 
   
 }
+.question_slide{
+  height:270px;
+  width: 160px;
+  padding: 15px;
+  
+}
+.question_slide  .slide_box{
+  height: 48px;
+ 
+
+}
+
 
