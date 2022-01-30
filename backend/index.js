@@ -53,8 +53,8 @@ console.log(questiondata);
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({ Product: req.params.product })
     .then((data) => {
-      console.log("Data: ", data);
-      if(data = [])
+     
+      if(data.length==0)
       {
         console.log("hit");
         res.json("No data found");
@@ -78,7 +78,7 @@ app.get("/answer/:ans1/:ans2/:ans3/:product", (req, res) => {
     Product: req.params.product,
   })
     .then((data) => {
-      if(data = [])
+      if(data.length==0)
       {
         console.log("hit");
         res.json("No data found");
