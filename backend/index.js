@@ -24,37 +24,46 @@ const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
 console.log(questiondata);
-//  Uncomment these code to save data in db
-// for (var i = 0; i < data.length; i++) {
-//   const formdata1 = new Formdata(data[i]);
+ //Uncomment these code to save data in db
+for (var i = 0; i < data.length; i++) {
+  const formdata1 = new Formdata(data[i]);
 
-//   formdata1.save((error) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log("Product data Successfully saved");
-//     }
-//   });
-// }
-// Uncomment these code to save question into db
-
-for (var i = 0; i < questiondata.length; i++) {
-  const questiondata1 = new Questiondata(questiondata[i]);
-
-  questiondata1.save((error) => {
+  formdata1.save((error) => {
     if (error) {
       console.log(error);
     } else {
-      console.log("Question Successfully saved");
+      console.log("Product data Successfully saved");
     }
   });
 }
+// Uncomment these code to save question into db
+
+// for (var i = 0; i < questiondata.length; i++) {
+//   const questiondata1 = new Questiondata(questiondata[i]);
+
+//   questiondata1.save((error) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log("Question Successfully saved");
+//     }
+//   });
+// }
 
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({ Product: req.params.product })
     .then((data) => {
       console.log("Data: ", data);
-      res.json(data);
+      if(data = [])
+      {
+        console.log("hit");
+        res.json("No data found");
+      }
+      else
+      {
+        res.json(data);
+      }
+
     })
     .catch((error) => {
       console.log("error happened", error);
