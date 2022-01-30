@@ -2,23 +2,37 @@ import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import "./style.css";
 import children_img from "./children.png";
-import questionData from "./questionData";
+// import questionData from "./questionData";
 
-function Main() {
-  const [questionNo, setQuestionNo] = useState(0);
-  const [data, setData] = useState(questionData[questionNo]);
-
-  const handleNextBtn = () => {
-    setQuestionNo((prev) => prev + 1);
+function Main({
+  data,
+  questionNo,
+  handleNextBtn,
+  handlePrevBtn,
+  ans,
+  setAns,
+  handleSubmit,
+}) {
+  const [selected, setSelected] = useState(ans[questionNo]);
+  const handleChange = (e) => {
+    const newAns = [...ans];
+    newAns.splice(questionNo, 1, e.target.value);
+    setAns(newAns);
+    setSelected(e.target.value);
   };
-
-  const handlePrevBtn = () => {
-    setQuestionNo((prev) => prev - 1);
-  };
-  // console.log(questionData);
-  useEffect(() => {
-    setData(questionData[questionNo]);
-  }, [questionNo]);
+  // const check = () => {
+  //   if (ans[questionNo]) {
+  //     setSelected(ans[questionNo]);
+  //   } else {
+  //     const newAns = [...ans];
+  //     newAns.splice(questionNo, 1, 0);
+  //     setAns(newAns);
+  //   }
+  // };
+  // useEffect(() => {
+  //   check();
+  // }, []);
+  // console.log(data);
   return (
     <>
       <div className="question-container">
@@ -39,13 +53,19 @@ function Main() {
           </p>
           <img src={children_img} alt="" />
           <div>
-            {data.Options.map((option, index) => (
+            {data.Answer.map((option, index) => (
               <div
                 className="ans-options"
                 style={{ marginTop: "20px" }}
                 key={index}
               >
-                <input type="radio" />
+                <input
+                  type="radio"
+                  value={index}
+                  name={`question${questionNo}`}
+                  onChange={handleChange}
+                  checked={selected == index}
+                />
                 <p
                   style={{
                     fontSize: "22px",
@@ -85,7 +105,11 @@ function Main() {
               Next
             </Button>
           ) : (
-            <Button variant="outline-primary" className="navBtn">
+            <Button
+              variant="outline-primary"
+              className="navBtn"
+              onClick={handleSubmit}
+            >
               Submit
             </Button>
           )}
