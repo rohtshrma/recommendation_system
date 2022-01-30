@@ -16,21 +16,22 @@ button {
   width: 90%;
   border: none;
   background: none;
-  color: blue;
+  color: #0275d8;
   border-radius: 5px;
 
   position: relative;
   display: inline-block;
   font-size: 18px;
   font-weight: 500;
-  color: royalblue;
+  color: #0275d8;
   
 }
 
 
 .active {
-  background-color: #2f3a8f;
+  background-color: white;
   color: white;
+  padding:4px;
 }
 
 .top-bar {
@@ -45,9 +46,10 @@ button {
 }
 
 .question-container {
-  border: 1px solid grey;
+  padding: 15px;
   border-radius: 5px;
   height: 60%;
+
 }
 .question-ans {
   padding: 0 10px;
@@ -86,7 +88,19 @@ input[type=radio] {
 .question_slide  .slide_box{
   height: 48px;
  
-
 }
-
+.slide_box button{
+  font-size: 14px;
+  font-weight: 600;
+}
+.content_side{
+  height: 300px;
+  width: 300px;
+ 
+  position: absolute;
+  top: 100px;
+  right: 28px; 
+  padding: 20px;
+  box-shadow: rgb(184, 181, 181) 0px 1px 1px 2px;
+}
 
