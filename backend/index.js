@@ -25,17 +25,17 @@ const questiondata = await csv().fromFile(questionFilePath);
 
 console.log(questiondata);
  //Uncomment these code to save data in db
-for (var i = 0; i < data.length; i++) {
-  const formdata1 = new Formdata(data[i]);
+// for (var i = 0; i < data.length; i++) {
+//   const formdata1 = new Formdata(data[i]);
 
-  formdata1.save((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Product data Successfully saved");
-    }
-  });
-}
+//   formdata1.save((error) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log("Product data Successfully saved");
+//     }
+//   });
+// }
 // Uncomment these code to save question into db
 
 // for (var i = 0; i < questiondata.length; i++) {
@@ -78,8 +78,15 @@ app.get("/answer/:ans1/:ans2/:ans3/:product", (req, res) => {
     Product: req.params.product,
   })
     .then((data) => {
-      console.log("Data: ", data);
-      res.json(data);
+      if(data = [])
+      {
+        console.log("hit");
+        res.json("No data found");
+      }
+      else
+      {
+        res.json(data);
+      }
     })
     .catch((error) => {
       console.log("error happened", error);
