@@ -5,7 +5,7 @@ const formdata=new Schema({
 	Question1:String,
 	Question2:String,
   Question3:String,
- Product:String,
+  Product:String,
   Price:String,
   Valueformoney:String,
   Brand:String,
@@ -13,7 +13,9 @@ const formdata=new Schema({
   Score:String,
   Amazon:String,
   Flipkart:String,
-  Reliance:String
+  Reliance:String,
+  Imageurl:String,
+
 })
 const Formdata=mongoose.model('formdata',formdata);
 export default Formdata;

@@ -24,7 +24,7 @@ const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
 console.log(questiondata);
-//  Uncomment these code to save data in db
+ //Uncomment these code to save data in db
 // for (var i = 0; i < data.length; i++) {
 //   const formdata1 = new Formdata(data[i]);
 
@@ -53,8 +53,17 @@ console.log(questiondata);
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({ Product: req.params.product })
     .then((data) => {
-      console.log("Data: ", data);
-      res.json(data);
+     
+      if(data.length==0)
+      {
+        console.log("hit");
+        res.json("No data found");
+      }
+      else
+      {
+        res.json(data);
+      }
+
     })
     .catch((error) => {
       console.log("error happened", error);
@@ -69,8 +78,15 @@ app.get("/answer/:ans1/:ans2/:ans3/:product", (req, res) => {
     Product: req.params.product,
   })
     .then((data) => {
-      console.log("Data: ", data);
-      res.json(data);
+      if(data.length==0)
+      {
+        console.log("hit");
+        res.json("No data found");
+      }
+      else
+      {
+        res.json(data);
+      }
     })
     .catch((error) => {
       console.log("error happened", error);
