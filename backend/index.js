@@ -38,17 +38,17 @@ console.log(questiondata);
 // }
 // Uncomment these code to save question into db
 
-for (var i = 0; i < questiondata.length; i++) {
-  const questiondata1 = new Questiondata(questiondata[i]);
+// for (var i = 0; i < questiondata.length; i++) {
+//   const questiondata1 = new Questiondata(questiondata[i]);
 
-  questiondata1.save((error) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Question Successfully saved");
-    }
-  });
-}
+//   questiondata1.save((error) => {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log("Question Successfully saved");
+//     }
+//   });
+// }
 
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({ Product: req.params.product })

@@ -43,7 +43,7 @@ function Main({
           <p
             style={{ fontSize: "20px", fontWeight: "bold", paddingTop: "10px" }}
           >
-            Children
+            {data.Title}
           </p>
           {/* <p>Why does this question matter?</p> */}
         </div>
