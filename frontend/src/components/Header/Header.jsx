@@ -30,31 +30,37 @@ function Header() {
       <div
         className="static-slider10"
         style={{
-          backgroundImage: "linear-gradient(to right, #4880EC, red)",
-          width: "100vw",
+          backgroundImage: "url(" + bannerImg + ")",
+          height: "300px",
+          
+  backgroundSize: '1350px 300px',
+  
+  backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="container">
           <div className="row justify-content-center ">
             <div className="col-md-12 align-self-center text-center">
-            <img src={bannerImg}  className="bannerImage" alt="bannerImg"/>
-              {/* <span className="badge rounded-pill badge-inverse text-white font-weight-light px-3 py-1">Creating Brands</span> */}
-              <h1 className=" title text-white " style={{ fontSize: "35px", fontFamily:" 'Sedgwick Ave', cursive" }}>
-                Get Product recommendation according to your Need
-              </h1>
-              <h6
-                className="text-white font-weight-normal op-8"
-                style={{ fontSize: "35px", fontFamily:" 'Sedgwick Ave', cursive" }}
-              >
-                What are you planning to buy?
-              </h6>
-              {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
+          
             </div>
           </div>
         </div>
       </div>
 
       {/* banner end */}
+
+        {/* <img src={bannerImg}  className="bannerImage" alt="bannerImg"/> */}
+            
+              <h1 className=" title text-dark text-center font-weight-bold " style={{ fontSize: "35px", fontFamily:" 'Sedgwick Ave', cursive" }}>
+                Get Product recommendation according to your Need
+              </h1>
+              <h6
+                className=" text-dark text-center font-weight-bold op-8 mb-5"
+                style={{ fontSize: "35px", fontFamily:" 'Sedgwick Ave', cursive" }}
+              >
+                What are you planning to buy?
+              </h6> 
+              {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
     </>
   );
 }
