@@ -11,8 +11,10 @@ import ref from "../images/Ref_image.jpeg";
 import Button from "@mui/material/Button";
 
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const Carousel = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <OwlCarousel
@@ -29,7 +31,11 @@ const Carousel = () => {
             <h1>Tailored Jeans</h1>
             {/* <p class="price">$999</p> */}
 
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>
@@ -38,7 +44,11 @@ const Carousel = () => {
           <div class="card">
             <img className="img" src={tv} alt="Img1" />
             <h1>Tailored Jeans</h1>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>
@@ -48,7 +58,11 @@ const Carousel = () => {
             <img className="img" src={washing} alt="Img1" />
             <h1>Tailored Jeans</h1>
             {/* <p class="price">$19.99</p> */}
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>
@@ -58,7 +72,11 @@ const Carousel = () => {
             <img className="img" src={micro} alt="Img1" />
             <h1>Tailored Jeans</h1>
 
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>
@@ -67,7 +85,11 @@ const Carousel = () => {
           <div class="card">
             <img className="img" src={ac} alt="Img1" />
             <h1>Tailored Jeans</h1>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>
@@ -76,7 +98,11 @@ const Carousel = () => {
           <div class="card">
             <img className="img" src={ref} alt="Img1" />
             <h1>Tailored Jeans</h1>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/question/refrigerator")}
+            >
               Add to cart
             </Button>
           </div>

@@ -31,7 +31,7 @@ function Question() {
       ans3: ans[2],
       product,
     });
-    navigate("/reco");
+    navigate("/newreco");
   };
 
   const getQuestions = async () => {
@@ -39,7 +39,7 @@ function Question() {
       const { data } = await axios.get(
         `http://localhost:8000/getquestions/${product}`
       );
-      console.log(data);
+      // console.log(data);
       // console.log(formData);
       setQuestions(data);
     } catch (err) {
