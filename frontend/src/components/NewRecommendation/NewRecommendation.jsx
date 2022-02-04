@@ -6,6 +6,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 // import "./NewRecommendation.css";
 import useStyles from "./style.js";
+import { fontSize } from "@mui/system";
 
 function NewRecommendation() {
   const classes = useStyles();
@@ -25,9 +26,9 @@ function NewRecommendation() {
   // console.log(products);
 
   return (
-    <div>
-      <Grid container>
-        <Grid item xs={12}>
+    <div style={{backgroundColor:"lightgrey "}}>
+      <Grid container >
+        <Grid item xs={12} >
           <h1 className="text-center mb-5">All Best Recommendations For You</h1>
         </Grid>
       </Grid>
@@ -49,23 +50,25 @@ function NewRecommendation() {
               alignItems: "center",
             }}
           >
-            <p className="check">Value for money</p>
-            <p>Brand</p>
-            <p>Popular</p>
-            <p>After Sales</p>
-            <p>Price</p>
-            <p>Overall Score</p>
+            <p className="check" style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>Value for money</p> 
+            <p  style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>Brand</p>
+            <p  style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>Popular</p>
+            <p style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>After Sales</p>
+            <p style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>Price</p>
+            <p style={{textDecoration:"underline",fontWeight:"600",fontSize:"18px"}}>Overall Score</p>
           </div>
         </Grid>
 
         {products &&
           products.map((product, index) => {
             return (
-              <Grid
+              <Grid 
                 key={index}
                 item
                 xs={2.5}
-                style={{ border: "2px solid black", paddingBottom: "50px" }}
+                style={{ border: "2px solid black", paddingBottom: "50px", borderRadius:"20px "
+                
+                ,marginRight:"10px", boxShadow:"2px 2px 10px 2px ", background:"linear-gradient( lightgrey ,lightpink " }}
               >
                 <div
                   style={{
@@ -79,23 +82,22 @@ function NewRecommendation() {
                   <p>{product.Product}</p>
                   <div style={{ display: "flex" }}>
                     <Button
-                      className={classes.btnClass}
+                      className={classes.FlipkartClass}
                       href={product.Flipkart}
                     >
                       Flipkart
                     </Button>
-                    <Button
-                      style={{
-                        border: "2px solid grey",
-                        borderRadius: "10px",
-                        marginRight: "2px",
-                      }}
+
+
+                    <Button 
+                    className={classes.AmazonClass}
+                      
                       href={product.Amazon}
                     >
                       Amazon
                     </Button>
                     <Button
-                      style={{ border: "2px solid grey", borderRadius: "10px" }}
+                       className={classes.RelianceClass}
                       href={product.Reliance}
                     >
                       Reliance
@@ -109,12 +111,12 @@ function NewRecommendation() {
                     alignItems: "center",
                   }}
                 >
-                  <p>{product.Valueformoney}</p>
-                  <p>{product.Brand}</p>
-                  <p>{product.Valueformoney}</p>
-                  <p>{product.AfterSales}</p>
-                  <p>{product.Price}</p>
-                  <p>{product.Score}</p>
+                  <p style={{fontWeight:"700", fontSize: "18px"}}>{product.Valueformoney}</p>
+                  <p  style={{fontWeight:"700", fontSize:"18px"}}>{product.Brand}</p>
+                  <p  style={{fontWeight:"700", fontSize:"18px"}}>{product.Valueformoney}</p>
+                  <p  style={{fontWeight:"700", fontSize:"18px"}}>{product.AfterSales}</p>
+                  <p  style={{fontWeight:"700", fontSize:"18px"}}>{product.Price}</p>
+                  <p  style={{fontWeight:"700", fontSize:"18px"}}>{product.Score}</p>
                 </div>
               </Grid>
             );
@@ -129,7 +131,7 @@ function NewRecommendation() {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+               alignItems: "center",
               height: "55%",
             }}
           >
