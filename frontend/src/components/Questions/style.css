@@ -38,7 +38,8 @@ button {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
-}
+}npm strat
+
 
 .ans-options {
   display: flex;
@@ -103,4 +104,12 @@ input[type=radio] {
   padding: 20px;
   box-shadow: rgb(184, 181, 181) 0px 1px 1px 2px;
 }
-
+.box_content{
+  height: 300px;
+  width: 300px;
+  border:1px solid black;
+  box-shadow: rgb(184, 181, 181) 0px 1px 1px 2px;
+  position: absolute;
+  right: 0px;
+  top:100px
+}

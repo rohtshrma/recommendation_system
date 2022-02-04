@@ -29,7 +29,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ref} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Refligator</h1>
             {/* <p class="price">$999</p> */}
             
             <Button variant="contained" color="primary">
@@ -40,7 +40,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={tv} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>TV</h1>
             <Button variant="contained" color="primary">
               Add to cart
             </Button>  
@@ -52,7 +52,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={washing} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
             <Button variant="contained" color="primary">
               Add to cart
@@ -62,7 +62,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={micro} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Micro Oven</h1>
            
             <Button variant="contained" color="primary">
               Add to cart
@@ -72,7 +72,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ac} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>AC</h1>
             <Button variant="contained" color="primary">
               Add to cart
             </Button>
@@ -81,7 +81,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ref} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Refligator</h1>
             <Button variant="contained" color="primary">
               Add to cart
             </Button>
