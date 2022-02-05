@@ -12,7 +12,7 @@ function Question() {
   const { product } = useParams();
   const [questionNo, setQuestionNo] = useState(0);
   const [ans, setAns] = useState(["0", "0", "0"]);
-  const { questionData, setQuestionData } = useContext(QuestionContext);
+  // const { questionData, setQuestionData } = useContext(QuestionContext);
   const navigate = useNavigate();
   // console.log(val);
 
@@ -25,12 +25,21 @@ function Question() {
     setQuestionNo((prev) => prev - 1);
   };
   const handleSubmit = () => {
-    setQuestionData({
-      ans1: ans[0],
-      ans2: ans[1],
-      ans3: ans[2],
-      product,
-    });
+    // setQuestionData({
+    //   ans1: ans[0],
+    //   ans2: ans[1],
+    //   ans3: ans[2],
+    //   product,
+    // });
+    localStorage.setItem(
+      "questionData",
+      JSON.stringify({
+        ans1: ans[0],
+        ans2: ans[1],
+        ans3: ans[2],
+        product,
+      })
+    );
     navigate("/newreco");
   };
 
@@ -39,8 +48,7 @@ function Question() {
       const { data } = await axios.get(
         `http://localhost:8000/getquestions/${product}`
       );
-      // console.log(data);
-      // console.log(formData);
+
       setQuestions(data);
     } catch (err) {
       console.log(err);
@@ -48,6 +56,7 @@ function Question() {
   };
   useEffect(() => {
     // setFormData({ ...formData, product });
+    localStorage.removeItem("questionData");
     getQuestions();
   }, []);
   // console.log(formData);
@@ -56,7 +65,11 @@ function Question() {
     <Container>
       <Row gap={2}>
         <Col xs={2}>
-          <Sidebar />
+          <Sidebar
+            questionNo={questionNo}
+            data={questions}
+            setQuestionNo={setQuestionNo}
+          />
         </Col>
         <Col>
           {questions.map(
