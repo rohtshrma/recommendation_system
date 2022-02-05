@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import logoImg from "../images/FastRivi-logos.jpeg";
-import bannerImg from "../images/main-banner-4.png"
+import bannerImg from "../images/banner-1400PX.png"
 
 function Header() {
   return (
@@ -28,16 +28,18 @@ function Header() {
       {/* banner start */}
 
       <div
-        className="static-slider10"
+        className="static-slider10 "
         style={{
           backgroundImage: "url(" + bannerImg + ")",
           height: "300px",
-          
+          backgroundColor:"lightgrey",
   backgroundSize: '1350px 300px',
-  
+  boxShadow:"0 0 10px 10px grey",
+  marginBottom:"30px",
   backgroundRepeat: 'no-repeat'
         }}
       >
+ 
         <div className="container">
           <div className="row justify-content-center ">
             <div className="col-md-12 align-self-center text-center">
@@ -49,7 +51,7 @@ function Header() {
 
       {/* banner end */}
 
-        {/* <img src={bannerImg}  className="bannerImage" alt="bannerImg"/> */}
+       
             
               <h1 className=" title text-dark text-center font-weight-bold " style={{ fontSize: "35px", fontFamily:" 'Sedgwick Ave', cursive" }}>
                 Get Product recommendation according to your Need
