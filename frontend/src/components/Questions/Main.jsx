@@ -38,12 +38,13 @@ function Main({
   // console.log(data);
   return (
     <>
+    <Paper>
       <div className="question-container">
         <div className="top-bar sidebar">
           <p
             style={{ fontSize: "20px", fontWeight: "bold", paddingTop: "10px" }}
           >
-            Children
+            {data.Title}
           </p>
           {/* <p>Why does this question matter?</p> */}
         </div>
@@ -117,13 +118,19 @@ function Main({
             </Button>
           )}
         </div>
+        <div className="box_content">
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, ipsam!
+        </p>
+         </div>
       </div>
+      </Paper>
       <div className="video my-3">
         <iframe
           width="420"
           height="315"
           src="https://www.youtube.com/embed/tgbNymZ7vqY"
         ></iframe>
+        <h5>Lorem ipsum dolor sit amet.</h5>
       </div>
     </>
   );

@@ -12,12 +12,13 @@ const RecommendationBottom = () => {
   const getProduct = async () => {
     const apiUrl = `http://localhost:8000/answer/${questionData.ans1}/${questionData.ans2}/${questionData.ans3}/Refrigerator`;
     const { data } = await axios.get(apiUrl);
-    // console.log(data);
+    console.log(data);
     setProducts(data);
   };
   useEffect(() => {
     getProduct();
   }, []);
+  // console.log(products);
 
   return (
     <>
@@ -40,7 +41,7 @@ const RecommendationBottom = () => {
                 return (
                   <>
                     <div className="col-md-5">
-                      <img src={product.Flipkart} alt="Amazon" width={150} />
+                      <img src={product.Imageurl} alt="Amazon" width={150} />
                     </div>
                     <div className="col-md-7 recomContent">
                       <h6>
