@@ -2,7 +2,6 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import Pic from "../images/img-1.jpg";
 import ac from "../images/AC_image.jpeg";
 import tv from "../images/TV_image.webp";
 import washing from "../images/Washing_machine_image.png";
@@ -38,7 +37,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ref} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Refligator</h1>
             {/* <p class="price">$999</p> */}
 
             <Button
@@ -53,7 +52,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={tv} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>TV</h1>
             <Button
               variant="contained"
               color="primary"
@@ -66,7 +65,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={washing} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
             <Button
               variant="contained"
@@ -80,7 +79,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={micro} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Micro Oven</h1>
 
             <Button
               variant="contained"
@@ -94,7 +93,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ac} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>AC</h1>
             <Button
               variant="contained"
               color="primary"
@@ -107,7 +106,7 @@ const Carousel = () => {
         <div className="carousel-box">
           <div class="card">
             <img className="img" src={ref} alt="Img1" />
-            <h1>Tailored Jeans</h1>
+            <h1>Refrigerator</h1>
             <Button
               variant="contained"
               color="primary"

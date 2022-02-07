@@ -8,9 +8,9 @@ font-size: 30px;
 font-weight: 700;
 font-family: 'Sedgwick Ave', cursive;}
 
-.bannerImage{
-  width: 400px;
-}
+/* .bannerImage{
+  width:100vw;
+} */
 
 @import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 .static-slider10 {
