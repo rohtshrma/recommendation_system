@@ -1,0 +1,10 @@
+.owl-next {
+  right: 0 !important;
+}
+.owl-prev span {
+  display: block;
+  font-size: 100px;
+}
+.owl-prev {
+  left: 0 !important;
+}

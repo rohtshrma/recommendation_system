@@ -18,12 +18,22 @@ const Carousel = () => {
   return (
     <div>
       <OwlCarousel
-        items={5}
         className="owl-theme"
         loop
         nav
         margin={8}
         autoplay={true}
+        responsive={{
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 2,
+          },
+          1000: {
+            items: 4,
+          },
+        }}
       >
         <div className="carousel-box">
           <div class="card">

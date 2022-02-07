@@ -12,7 +12,6 @@
 }
 
 .card button {
- 
   text-align: center;
   cursor: pointer;
   width: 90%;
@@ -25,36 +24,38 @@
 .card .img {
   height: 250px;
 }
-.card p{
+.card p {
   color: rgb(54, 53, 53);
 }
-.card h1{
+.card h1 {
   color: #000;
   font-size: 25px;
   padding-top: 10px;
 }
 /* carousel next button  start */
 
-.owl-dots{
+.owl-dots {
   display: none;
 }
-.owl-prev span{
+.owl-prev span {
   display: none;
-
 }
-.owl-nav button{
+.owl-nav button {
   position: absolute;
   top: 150px;
-  left: 93%;
+  /* left: 93%; */
   background-color: aqua;
   height: 100px;
   width: 100px;
 }
- .owl-next span{
+.owl-next {
+  right: 0;
+}
+.owl-next span {
   font-size: 100px;
   padding-bottom: 30px;
 }
-.owl-theme .owl-nav [class*='owl-']:hover {
+.owl-theme .owl-nav [class*="owl-"]:hover {
   background-color: transparent;
   color: rgb(116, 109, 109);
 }

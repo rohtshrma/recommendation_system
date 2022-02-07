@@ -9,7 +9,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 function Sidebar({ questionNo, data, setQuestionNo }) {
   return (
     <>
-      <div className="">
+      <div>
         <Stack gap={3} className="mainContainer">
           <Paper className="question_slide">
             {data.map((question, index) => {
@@ -27,30 +27,6 @@ function Sidebar({ questionNo, data, setQuestionNo }) {
               );
             })}
 
-            {/* 
-            <div className="slide_box">
-                  <button className="active">
-                    Get&nbsp;Started <MdKeyboardArrowRight />
-                  </button>
-                </div>
-            
-            <div className="slide_box">
-              <button>
-                Children <MdKeyboardArrowRight />{" "}
-              </button>
-            </div>
-
-            <div className="slide_box">
-              <button>
-                Room&nbsp;Size
-                <MdKeyboardArrowRight />{" "}
-              </button>
-            </div>
-            <div className="slide_box">
-              <button>
-                Price <MdKeyboardArrowRight />
-              </button>
-            </div> */}
             <div className="slide_box">
               <button>
                 Results
