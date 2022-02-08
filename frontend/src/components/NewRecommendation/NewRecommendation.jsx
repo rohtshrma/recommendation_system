@@ -157,10 +157,9 @@ function NewRecommendation() {
                     style={{
                       border: "2px solid black",
                       paddingBottom: "50px",
-                      borderRadius: "20px ",
-
-                      marginRight: "10px",
+                      // borderRadius: "20px ",
                       boxShadow: "2px 2px 10px 2px ",
+                      
                       background: "linear-gradient( lightgrey ,lightpink ",
                     }}
                   >
@@ -170,6 +169,7 @@ function NewRecommendation() {
                         flexDirection: "column",
                         alignItems: "center",
                         height: "55%",
+                        backgroundColor: "lightgrey " 
                       }}
                     >
                       <img
@@ -177,7 +177,7 @@ function NewRecommendation() {
                         alt="Fridge"
                         style={{ width: "52%" }}
                       />
-                      <p>{product.Product}</p>
+                      <p style={{color:"black", fontWeight:"600", fontSize:"20px"}}>{product.Product}</p>
                       <div style={{ display: "flex" }}>
                         <Button
                           className={classes.FlipkartClass}
@@ -207,26 +207,26 @@ function NewRecommendation() {
                         alignItems: "center",
                       }}
                     >
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
                         {product.Valueformoney}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
                         {product.Brand}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px" , color:"black"}}>
                         {product.Valueformoney}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px"  , color:"black"}}>
                         {product.AfterSales}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
                         {product.Price}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" }}>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
                         {product.Score}
                       </p>
                     </div>
-                  </div>
+                    </div>
                   // </Grid>
                 );
               })}
