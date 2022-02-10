@@ -8,3 +8,7 @@
 .owl-prev {
   left: 0 !important;
 }
+.owl-item {
+  padding:0px !important;
+  /* border-radius: 20px !important; */
+}
