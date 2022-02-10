@@ -12,3 +12,17 @@
   padding:0px !important;
   /* border-radius: 20px !important; */
 }
+
+@media screen and (max-width: 992px) {
+  .heading_Content{
+    display: none !important;
+  }
+
+  .MuiGrid-root > div{
+    /* display: none; */
+  }
+
+  .media_Class{
+    justify-content: center !important;
+  }
+}

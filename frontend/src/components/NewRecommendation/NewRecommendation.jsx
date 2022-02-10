@@ -44,17 +44,17 @@ function NewRecommendation() {
     <div style={{ backgroundColor: "lightgrey " }}>
       <h1 className="text-center mb-5">All Best Recommendations For You</h1>
 
-      <Grid container>
-        <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}>
+      <Grid container className="media_Class">
+        <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}  className="heading_Content">
           <div style={{ height: "55%" }}>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <h2 style={{ textAlign: "center" }}>Product Specification</h2>
+            <h2 style={{ textAlign: "center" }} className="heading_Content">Product Specification</h2>
           </div>
-          <div
+          <div className="heading_Content"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -129,6 +129,9 @@ function NewRecommendation() {
                   items: 1,
                 },
                 600: {
+                  items: 1,
+                },
+                700: {
                   items: 2,
                 },
                 1000: {
@@ -163,7 +166,7 @@ function NewRecommendation() {
                       background: "linear-gradient( lightgrey ,lightpink ",
                     }}
                   >
-                    <div
+                    <div 
                       style={{
                         display: "flex",
                         flexDirection: "column",
