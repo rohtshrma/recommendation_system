@@ -44,8 +44,8 @@ function NewRecommendation() {
     <div style={{ backgroundColor: "lightgrey " }}>
       <h1 className="text-center mb-5">All Best Recommendations For You</h1>
 
-      <Grid container className="media_Class">
-        <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}  className="heading_Content">
+      <Grid container className="media_Class" >
+        {/* <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}  className="heading_Content">
           <div style={{ height: "55%" }}>
             <br />
             <br />
@@ -54,73 +54,11 @@ function NewRecommendation() {
             <br />
             <h2 style={{ textAlign: "center" }} className="heading_Content">Product Specification</h2>
           </div>
-          <div className="heading_Content"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <p
-              className="check"
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Value for money
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Brand
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Popular
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              After Sales
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Price
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Overall Score
-            </p>
-          </div>
-        </Grid>
+         
+        </Grid> */}
 
         {products && (
-          <Grid item xs={8} md={10}>
+          <Grid item xs={12} md={12}>
             <OwlCarousel
               className="owl-theme"
               nav
@@ -207,26 +145,43 @@ function NewRecommendation() {
                       style={{
                         display: "flex",
                         flexDirection: "column",
-                        alignItems: "center",
-                      }}
+                        marginTop:"30px"
+                        }}
                     >
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
-                        {product.Valueformoney}
+                    
+                      <p style={{  fontSize: "18px", color:"black" }}>
+                        <span style={{paddingLeft:"20px"}}> Value for Money </span> <span style={{float:"right",fontWeight: "700" , paddingRight:"30px"}}> {product.Valueformoney}</span>
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
-                        {product.Brand}
+                    
+
+
+                    
+                      <p style={{  fontSize: "18px", color:"black" }}>
+                      <span style={{paddingLeft:"20px"}}>Brand</span> <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}> 
+                        {product.Brand}  </span>
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" , color:"black"}}>
-                        {product.Valueformoney}
+                      <p style={{  fontSize: "18px" , color:"black"}}>
+                      <span style={{paddingLeft:"20px"}}>Value for Money</span>
+                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>{product.Valueformoney}</span>
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px"  , color:"black"}}>
-                        {product.AfterSales}
+
+
+                      <p style={{  fontSize: "18px"  , color:"black"}}>
+                      <span style={{paddingLeft:"20px"}}>After Sales</span>
+                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>  {product.AfterSales}</span>
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
-                        {product.Price}
+
+
+
+                      <p style={{  fontSize: "18px", color:"black" }}>
+                      <span style={{paddingLeft:"20px"}}>Price</span>
+                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>    {product.Price}</span>
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
-                        {product.Score}
+
+                      
+                      <p style={{  fontSize: "18px", color:"black" }}>
+                      <span style={{paddingLeft:"20px"}}>Score</span>
+                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>      {product.Score}</span>
                       </p>
                     </div>
                     </div>

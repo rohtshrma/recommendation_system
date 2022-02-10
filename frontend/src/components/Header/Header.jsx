@@ -28,7 +28,7 @@ function Header() {
       {/* banner start */}
 
       <div
-        className="static-slider10 "
+        className="static-slider10 img-responsive img-fluid"
         style={{
           backgroundImage: "url(" + bannerImg + ")",
           height: "300px",
