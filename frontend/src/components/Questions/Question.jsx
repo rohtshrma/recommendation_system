@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import axios from "axios";
 import Loading from "../Loading/Loading";
 import { QuestionContext } from "../../globalContext/globalState";
+import "./question.css";
 
 function Question() {
   const [questions, setQuestions] = useState(null);
@@ -63,15 +64,15 @@ function Question() {
   if (!questions) return <Loading />;
   return (
     <Container>
-      <Row gap={2}>
-        <Col xs={2}>
+      <Row>
+        <Col md={3} className="sidebar_mobile">
           <Sidebar
             questionNo={questionNo}
             data={questions}
             setQuestionNo={setQuestionNo}
           />
         </Col>
-        <Col>
+        <Col md={9} xs={12}>
           {questions.map(
             (question, index) =>
               questionNo === index && (
