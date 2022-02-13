@@ -1,7 +1,8 @@
 import React from "react";
 import "./Header.css";
-import logoImg from "../images/FastRivi-logos.jpeg";
-import bannerImg from "../images/banner-1400PX.png"
+import logoImg from "../images/FastRivi-logos.jpg";
+import bannerImg from "../images/banner-1400PX.png";
+// import bannerImg2 from "../images/main-banner-5.png"
 
 function Header() {
   return (
