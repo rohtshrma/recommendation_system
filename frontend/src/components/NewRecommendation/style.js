@@ -26,8 +26,4 @@ export default makeStyles({
     backgroundColor: "#E42529 !important ",
     color: "white !important",
   },
-
-
-
-
 });
