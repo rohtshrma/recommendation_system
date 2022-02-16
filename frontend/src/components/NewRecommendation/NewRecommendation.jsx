@@ -44,21 +44,83 @@ function NewRecommendation() {
     <div style={{ backgroundColor: "lightgrey " }}>
       <h1 className="text-center mb-5">All Best Recommendations For You</h1>
 
-      <Grid container className="media_Class" >
-        {/* <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}  className="heading_Content">
+      <Grid container>
+        <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}>
           <div style={{ height: "55%" }}>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <h2 style={{ textAlign: "center" }} className="heading_Content">Product Specification</h2>
+            <h2 style={{ textAlign: "center" }}>Product Specification</h2>
           </div>
-         
-        </Grid> */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <p
+              className="check"
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              Value for money
+            </p>
+            <p
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              Brand
+            </p>
+            <p
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              Popular
+            </p>
+            <p
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              After Sales
+            </p>
+            <p
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              Price
+            </p>
+            <p
+              style={{
+                textDecoration: "underline",
+                fontWeight: "600",
+                fontSize: "18px",
+              }}
+            >
+              Overall Score
+            </p>
+          </div>
+        </Grid>
 
         {products && (
-          <Grid item xs={12} md={12}>
+          <Grid item xs={8} md={10}>
             <OwlCarousel
               className="owl-theme"
               nav
@@ -67,9 +129,6 @@ function NewRecommendation() {
                   items: 1,
                 },
                 600: {
-                  items: 1,
-                },
-                700: {
                   items: 2,
                 },
                 1000: {
@@ -104,7 +163,7 @@ function NewRecommendation() {
                       background: "linear-gradient( lightgrey ,lightpink ",
                     }}
                   >
-                    <div 
+                    <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
@@ -145,43 +204,26 @@ function NewRecommendation() {
                       style={{
                         display: "flex",
                         flexDirection: "column",
-                        marginTop:"30px"
-                        }}
+                        alignItems: "center",
+                      }}
                     >
-                    
-                      <p style={{  fontSize: "18px", color:"black" }}>
-                        <span style={{paddingLeft:"20px"}}> Value for Money </span> <span style={{float:"right",fontWeight: "700" , paddingRight:"30px"}}> {product.Valueformoney}</span>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                        {product.Valueformoney}
                       </p>
-                    
-
-
-                    
-                      <p style={{  fontSize: "18px", color:"black" }}>
-                      <span style={{paddingLeft:"20px"}}>Brand</span> <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}> 
-                        {product.Brand}  </span>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                        {product.Brand}
                       </p>
-                      <p style={{  fontSize: "18px" , color:"black"}}>
-                      <span style={{paddingLeft:"20px"}}>Value for Money</span>
-                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>{product.Valueformoney}</span>
+                      <p style={{ fontWeight: "700", fontSize: "18px" , color:"black"}}>
+                        {product.Valueformoney}
                       </p>
-
-
-                      <p style={{  fontSize: "18px"  , color:"black"}}>
-                      <span style={{paddingLeft:"20px"}}>After Sales</span>
-                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>  {product.AfterSales}</span>
+                      <p style={{ fontWeight: "700", fontSize: "18px"  , color:"black"}}>
+                        {product.AfterSales}
                       </p>
-
-
-
-                      <p style={{  fontSize: "18px", color:"black" }}>
-                      <span style={{paddingLeft:"20px"}}>Price</span>
-                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>    {product.Price}</span>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                        {product.Price}
                       </p>
-
-                      
-                      <p style={{  fontSize: "18px", color:"black" }}>
-                      <span style={{paddingLeft:"20px"}}>Score</span>
-                      <span style={{float:"right",fontWeight: "700" , fontWeight: "700", paddingRight:"30px"}}>      {product.Score}</span>
+                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                        {product.Score}
                       </p>
                     </div>
                     </div>
