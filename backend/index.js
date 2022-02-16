@@ -10,7 +10,7 @@ import { promisify } from "util";
 import creds from "./client_secret.js"
 
 
-const csvFilePath = "Book1.csv";
+const csvFilePath = "Combinations.csv";
 const questionFilePath = "Questions.csv";
 
 const app = express();
@@ -48,10 +48,6 @@ async function accessSpreadsheet(){
  console.log(rows[0].ID);
 
 
-
-
-  
-
   /*
  rows.forEach((row)=>{
   printdata(row);
@@ -64,43 +60,43 @@ async function accessSpreadsheet(){
 //accessSpreadsheet();
 
 
-// Formdata.deleteMany({  }).then(function(){
-//   console.log("Form Data deleted"); 
-// }).catch(function(error){
-//   console.log(error); 
-// });
-// //Uncomment these code to save data in db
-// for (var i = 0; i < data.length; i++) {
-//   const formdata1 = new Formdata(data[i]);
+Formdata.deleteMany({  }).then(function(){
+  console.log("Form Data deleted"); 
+}).catch(function(error){
+  console.log(error); 
+});
+//Uncomment these code to save data in db
+for (var i = 0; i < data.length; i++) {
+  const formdata1 = new Formdata(data[i]);
 
-//   formdata1.save((error) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log("Product data Successfully saved");
-//     }
-//   });
-// }
+  formdata1.save((error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Product data Successfully saved");
+    }
+  });
+}
 // // // Uncomment these code to save question into db
 
 
 
-// Questiondata.deleteMany( {}).then(function(){
-//   console.log("Question Data deleted"); // Success
-// }).catch(function(error){
-//   console.log(error); // Failure
-// });
-// for (var i = 0; i < questiondata.length; i++) {
-//   const questiondata1 = new Questiondata(questiondata[i]);
+Questiondata.deleteMany( {}).then(function(){
+  console.log("Question Data deleted"); // Success
+}).catch(function(error){
+  console.log(error); // Failure
+});
+for (var i = 0; i < questiondata.length; i++) {
+  const questiondata1 = new Questiondata(questiondata[i]);
 
-//   questiondata1.save((error) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log("Question Successfully saved");
-//     }
-//   });
-// }
+  questiondata1.save((error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Question Successfully saved");
+    }
+  });
+}
 
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({ Product: req.params.product })
@@ -117,11 +113,9 @@ app.get("/getquestions/:product", (req, res) => {
     });
 });
 
-app.get("/answer/:ans1/:ans2/:ans3/:product", (req, res) => {
+app.get("/answer/:combination/:product", (req, res) => {
   Formdata.find({
-    Question1: req.params.ans1,
-    Question2: req.params.ans2,
-    Question3: req.params.ans3,
+    Combination:req.params.combination,
     Product: req.params.product,
   })
     .then((data) => {

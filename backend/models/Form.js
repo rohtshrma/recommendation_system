@@ -2,18 +2,16 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const formdata=new Schema({
 	ID:String,
-	Question1:String,
-	Question2:String,
-  Question3:String,
+	Combination:String,
   Product:String,
   Price:String,
   Valueformoney:String,
   Brand:String,
   AfterSales:String,
   Score:String,
-  Amazon:String,
-  Flipkart:String,
-  Reliance:String,
+  Amazonurl:String,
+  Flipkarturl:String,
+  Relianceurl:String,
   Imageurl:String,
 
 })
