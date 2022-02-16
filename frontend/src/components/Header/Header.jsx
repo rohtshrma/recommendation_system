@@ -19,9 +19,9 @@ function Header() {
             </li>
           </ul>
         </div>
-        <a className="navbar-brand" href="#">
+        {/* <a className="navbar-brand" href="#">
           FastRivi
-        </a>
+        </a> */}
       </nav>
 
       {/* header end */}
