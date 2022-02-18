@@ -116,7 +116,7 @@ app.get("/getquestions/:product", (req, res) => {
 app.get("/answer/:combination/:product", (req, res) => {
   Formdata.find({
     Combination:req.params.combination,
-    Product: req.params.product,
+    Product: req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1)
   })
     .then((data) => {
       if (data.length == 0) {
