@@ -43,7 +43,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>
@@ -56,7 +56,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>
@@ -70,7 +70,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>
@@ -84,7 +84,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>
@@ -97,7 +97,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>
@@ -110,7 +110,7 @@ const Carousel = () => {
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/Refrigerator")}
             >
               Add to cart
             </Button>

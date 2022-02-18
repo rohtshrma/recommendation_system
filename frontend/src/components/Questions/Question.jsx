@@ -12,7 +12,7 @@ function Question() {
   const [questions, setQuestions] = useState(null);
   const { product } = useParams();
   const [questionNo, setQuestionNo] = useState(0);
-  const [ans, setAns] = useState(["0", "0", "0"]);
+  const [ans, setAns] = useState([]);
   // const { questionData, setQuestionData } = useContext(QuestionContext);
   const navigate = useNavigate();
   // console.log(val);
@@ -26,18 +26,14 @@ function Question() {
     setQuestionNo((prev) => prev - 1);
   };
   const handleSubmit = () => {
-    // setQuestionData({
-    //   ans1: ans[0],
-    //   ans2: ans[1],
-    //   ans3: ans[2],
-    //   product,
-    // });
+    console.log(ans);
+    let ansStr = "";
+    ans.map((oneAns) => (ansStr += parseInt(oneAns) + 1));
+    // console.log(ansStr);
     localStorage.setItem(
       "questionData",
       JSON.stringify({
-        ans1: ans[0],
-        ans2: ans[1],
-        ans3: ans[2],
+        ans: ansStr,
         product,
       })
     );
@@ -49,6 +45,14 @@ function Question() {
       const { data } = await axios.get(
         `http://localhost:8000/getquestions/${product}`
       );
+
+      // console.log(data);
+      const noOfQuestion = data.length;
+      const newAns = [];
+      for (let i = 0; i < noOfQuestion; i++) {
+        newAns.push("0");
+      }
+      setAns(newAns);
 
       setQuestions(data);
     } catch (err) {
@@ -80,11 +84,12 @@ function Question() {
                   key={index}
                   data={question}
                   questionNo={questionNo}
-                  handleNextBtn={handleNextBtn}
-                  handlePrevBtn={handlePrevBtn}
                   ans={ans}
                   setAns={setAns}
+                  handleNextBtn={handleNextBtn}
+                  handlePrevBtn={handlePrevBtn}
                   handleSubmit={handleSubmit}
+                  lastQuestion={questions.length - 1}
                 />
               )
           )}

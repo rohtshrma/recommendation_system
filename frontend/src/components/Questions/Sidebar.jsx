@@ -20,16 +20,20 @@ function Sidebar({ questionNo, data, setQuestionNo }) {
                     questionNo === index ? "slide_box_active" : "slide_box"
                   }
                 >
-                  <button onClick={() => setQuestionNo(index)}>
-                    {question.Title} <MdKeyboardArrowRight />
+                  <button
+                    onClick={() => setQuestionNo(index)}
+                    className="sidebarBtns"
+                  >
+                    <div className="para">{question.Title}</div>
+                    <MdKeyboardArrowRight />
                   </button>
                 </div>
               );
             })}
 
             <div className="slide_box">
-              <button>
-                Results
+              <button className="sidebarBtns">
+                <div className="para">Result</div>
                 <MdKeyboardArrowRight />
               </button>
             </div>

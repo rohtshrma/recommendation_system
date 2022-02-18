@@ -16,6 +16,7 @@ function Main({
   ans,
   setAns,
   handleSubmit,
+  lastQuestion,
 }) {
   const [selected, setSelected] = useState(ans[questionNo]);
   const handleChange = (e) => {
@@ -24,19 +25,7 @@ function Main({
     setAns(newAns);
     setSelected(e.target.value);
   };
-  // const check = () => {
-  //   if (ans[questionNo]) {
-  //     setSelected(ans[questionNo]);
-  //   } else {
-  //     const newAns = [...ans];
-  //     newAns.splice(questionNo, 1, 0);
-  //     setAns(newAns);
-  //   }
-  // };
-  // useEffect(() => {
-  //   check();
-  // }, []);
-  // console.log(data);
+
   return (
     <>
       <Paper>
@@ -69,54 +58,48 @@ function Main({
                   </p>
                   <img src={children_img} alt="" />
                   <div>
-                    {data.Answer.map((option, index) => (
-                      <div
-                        className="ans-options"
-                        style={{ marginTop: "20px" }}
-                        key={index}
-                      >
-                        <input
-                          type="radio"
-                          value={index}
-                          name={`question${questionNo}`}
-                          onChange={handleChange}
-                          checked={selected == index}
-                        />
-                        <p
-                          style={{
-                            fontSize: "22px",
-                            fontWeight: "500",
-                            marginLeft: "20px",
-                          }}
-                        >
-                          {/* Yes I would like to protect them */}
-                          {option}
-                        </p>
-                      </div>
-                    ))}
+                    {data.Answer.map(
+                      (option, index) =>
+                        option !== "" && (
+                          <div
+                            className="ans-options"
+                            style={{ marginTop: "20px" }}
+                            key={index}
+                          >
+                            <input
+                              type="radio"
+                              value={index}
+                              name={`question${questionNo}`}
+                              onChange={handleChange}
+                              checked={selected == index}
+                            />
+                            <p
+                              style={{
+                                fontSize: "22px",
+                                fontWeight: "500",
+                                marginLeft: "20px",
+                              }}
+                            >
+                              {/* Yes I would like to protect them */}
+                              {option}
+                            </p>
+                          </div>
+                        )
+                    )}
                   </div>
                 </div>
 
                 <div className="navBtns">
-                  {questionNo === 0 ? (
-                    <Button
-                      variant="outline-primary"
-                      className="navBtn"
-                      disabled
-                    >
-                      Prev
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline-primary"
-                      className="navBtn"
-                      onClick={handlePrevBtn}
-                    >
-                      Prev
-                    </Button>
-                  )}
+                  <Button
+                    variant="outline-primary"
+                    className="navBtn"
+                    onClick={handlePrevBtn}
+                    disabled={questionNo === 0}
+                  >
+                    Prev
+                  </Button>
 
-                  {questionNo !== 2 ? (
+                  {questionNo !== lastQuestion ? (
                     <Button
                       variant="outline-primary"
                       className="navBtn"
@@ -138,11 +121,7 @@ function Main({
             </Grid>
             <Grid item md={3} mt={5}>
               <div className="box_content">
-                <p>
-                  {" "}
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Temporibus, ipsam!
-                </p>
+                <p>{data.Text}</p>
               </div>
             </Grid>
           </Grid>
@@ -154,7 +133,7 @@ function Main({
         <iframe
           className="video_player"
           title="hello"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          src={data.Video}
         ></iframe>
       </div>
     </>

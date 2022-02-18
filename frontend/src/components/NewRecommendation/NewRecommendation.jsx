@@ -18,20 +18,18 @@ function NewRecommendation() {
   const [flag, setFlag] = useState(false);
   // const { questionData } = useContext(QuestionContext);
   const [products, setProducts] = useState(null);
-  const getProduct = async (ans1, ans2, ans3, product) => {
+  const getProduct = async (ans, product) => {
     // console.log(ans1, ans2, ans3);
-    const apiUrl = `http://localhost:8000/answer/${ans1}/${ans2}/${ans3}/Refrigerator`;
+    const apiUrl = `http://localhost:8000/answer/${ans}/Refrigerator`;
     const { data } = await axios.get(apiUrl);
     // console.log(data);
     setProducts(data);
   };
   useEffect(() => {
     if (localStorage.getItem("questionData")) {
-      const { ans1, ans2, ans3, product } = JSON.parse(
-        localStorage.getItem("questionData")
-      );
+      const { ans, product } = JSON.parse(localStorage.getItem("questionData"));
       // console.log(data);
-      getProduct(ans1, ans2, ans3, product);
+      getProduct(ans, product);
       setFlag(true);
     }
   }, []);
@@ -159,7 +157,7 @@ function NewRecommendation() {
                       paddingBottom: "50px",
                       // borderRadius: "20px ",
                       boxShadow: "2px 2px 10px 2px ",
-                      
+
                       background: "linear-gradient( lightgrey ,lightpink ",
                     }}
                   >
@@ -169,7 +167,7 @@ function NewRecommendation() {
                         flexDirection: "column",
                         alignItems: "center",
                         height: "55%",
-                        backgroundColor: "lightgrey " 
+                        backgroundColor: "lightgrey ",
                       }}
                     >
                       <img
@@ -177,7 +175,15 @@ function NewRecommendation() {
                         alt="Fridge"
                         style={{ width: "52%" }}
                       />
-                      <p style={{color:"black", fontWeight:"600", fontSize:"20px"}}>{product.Product}</p>
+                      <p
+                        style={{
+                          color: "black",
+                          fontWeight: "600",
+                          fontSize: "20px",
+                        }}
+                      >
+                        {product.Product}
+                      </p>
                       <div style={{ display: "flex" }}>
                         <Button
                           className={classes.FlipkartClass}
@@ -207,26 +213,62 @@ function NewRecommendation() {
                         alignItems: "center",
                       }}
                     >
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.Valueformoney}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.Brand}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px" , color:"black"}}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.Valueformoney}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px"  , color:"black"}}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.AfterSales}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.Price}
                       </p>
-                      <p style={{ fontWeight: "700", fontSize: "18px", color:"black" }}>
+                      <p
+                        style={{
+                          fontWeight: "700",
+                          fontSize: "18px",
+                          color: "black",
+                        }}
+                      >
                         {product.Score}
                       </p>
                     </div>
-                    </div>
+                  </div>
                   // </Grid>
                 );
               })}

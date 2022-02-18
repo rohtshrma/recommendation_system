@@ -16,7 +16,6 @@ export const createData = async (req, res) => {
   const jsonArray = await csv().fromFile(filePath);
   console.log(jsonArray);
 
-
   //   const newPost = new PostMessage(post);
 
   //   try {
