@@ -129,7 +129,7 @@ function Main({
       </Paper>
 
       <div className="video">
-        <h5>Lorem ipsum dolor sit amet.</h5>
+        <h5>For more information, watch this video</h5>
         <iframe
           className="video_player"
           title="hello"

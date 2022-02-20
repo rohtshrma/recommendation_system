@@ -6,16 +6,19 @@ export default makeStyles({
     color: "white !important",
     marginRight: "5px !important",
     marginLeft: "5px !important",
+    width: "80px",
   },
 
   AmazonClass: {
     backgroundColor: "#F3D179 !important ",
     marginRight: "5px !important",
+    width: "80px",
   },
 
   RelianceClass: {
     backgroundColor: "#E42529 !important ",
     color: "white !important",
+    width: "80px",
     marginRight: "5px !important",
   },
   productContainer: {

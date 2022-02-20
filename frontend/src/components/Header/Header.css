@@ -1,22 +1,23 @@
 .company_logo {
-    width:100px;
-    background-color: #f8f9fa !important;
+  width: 100px;
+  background-color: #f8f9fa !important;
 }
 
-.navbar-brand{
-font-size: 30px;
-font-weight: 700;
-font-family: 'Sedgwick Ave', cursive;}
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 700;
+  /* font-family: "Sedgwick Ave", cursive; */
+}
 
 /* .bannerImage{
   width:100vw;
 } */
 
-@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+/* @import url(//fonts.googleapis.com/css?family=Montserrat:400,700); */
 .static-slider10 {
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   font-weight: 300;
-	padding: 3% 0;
+  padding: 3% 0;
   background-size: cover;
   background-position: center center;
 }
@@ -27,7 +28,7 @@ font-family: 'Sedgwick Ave', cursive;}
 }
 
 .static-slider10 .subtitle {
-    line-height: 24px;
+  line-height: 24px;
 }
 
 @media (max-width: 900px) {
@@ -38,24 +39,24 @@ font-family: 'Sedgwick Ave', cursive;}
 }
 
 .static-slider10 .btn-md {
-    padding: 15px 45px;
-    font-size: 16px;
+  padding: 15px 45px;
+  font-size: 16px;
 }
 
 .static-slider10 .badge {
-	line-height: 21px;
+  line-height: 21px;
 }
 
 .static-slider10 .badge-inverse {
-	background: #3e4555;
+  background: #3e4555;
 }
 
 .static-slider10 .op-8 {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 @media (max-width: 320px) {
-.static-slider10 .title{
-font-size: 25px !important;
-}}
-
+  .static-slider10 .title {
+    font-size: 25px !important;
+  }
+}

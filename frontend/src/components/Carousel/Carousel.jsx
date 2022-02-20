@@ -36,21 +36,6 @@ const Carousel = () => {
       >
         <div className="carousel-box">
           <div class="card">
-            <img className="img" src={ref} alt="Img1" />
-            <h1>Refligator</h1>
-            {/* <p class="price">$999</p> */}
-
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => navigate("/question/Refrigerator")}
-            >
-              Add to cart
-            </Button>
-          </div>
-        </div>
-        <div className="carousel-box">
-          <div class="card">
             <img className="img" src={tv} alt="Img1" />
             <h1>TV</h1>
             <Button
