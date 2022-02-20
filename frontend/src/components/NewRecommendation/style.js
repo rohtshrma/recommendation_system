@@ -2,28 +2,28 @@ import { makeStyles } from "@mui/styles";
 
 export default makeStyles({
   FlipkartClass: {
-    border: "2px solid grey !important",
-    padding: "4px 4px !important",
-    borderRadius: "10px !important",
     backgroundColor: "#2874F0 !important",
     color: "white !important",
-    marginRight: "10px !important",
+    marginRight: "5px !important",
+    marginLeft: "5px !important",
   },
 
   AmazonClass: {
-    border: "2px solid grey !important ",
-    padding: "4px 4px !important",
-    borderRadius: "10px !important ",
     backgroundColor: "#F3D179 !important ",
-
-    marginRight: "10px !important",
+    marginRight: "5px !important",
   },
 
   RelianceClass: {
-    border: "2px solid grey !important ",
-    padding: "4px 4px !important",
-    borderRadius: "10px !important ",
     backgroundColor: "#E42529 !important ",
     color: "white !important",
+    marginRight: "5px !important",
+  },
+  productContainer: {
+    border: "2px solid black",
+    paddingBottom: "50px",
+    // borderRadius: "20px ",
+    boxShadow: "2px 2px 10px 2px ",
+
+    background: "linear-gradient( lightgrey ,lightpink) ",
   },
 });

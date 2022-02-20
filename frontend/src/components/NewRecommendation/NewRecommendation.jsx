@@ -9,7 +9,7 @@ import "./styleRecommendation.css";
 import OwlCarousel from "react-owl-carousel";
 
 import useStyles from "./style.js";
-import { fontSize } from "@mui/system";
+
 import Loading from "../Loading/Loading";
 
 function NewRecommendation() {
@@ -22,7 +22,7 @@ function NewRecommendation() {
     // console.log(ans1, ans2, ans3);
     const apiUrl = `http://localhost:8000/answer/${ans}/Refrigerator`;
     const { data } = await axios.get(apiUrl);
-    // console.log(data);
+    console.log(data);
     setProducts(data);
   };
   useEffect(() => {
@@ -43,137 +43,59 @@ function NewRecommendation() {
       <h1 className="text-center mb-5">All Best Recommendations For You</h1>
 
       <Grid container>
-        <Grid item xs={4} md={2} style={{ paddingBottom: "70px" }}>
-          <div style={{ height: "55%" }}>
+        <Grid item xs={3} md={2} style={{ paddingBottom: "70px" }}>
+          <div style={{ height: "325px" }}>
             <br />
             <br />
             <br />
             <br />
             <br />
-            <h2 style={{ textAlign: "center" }}>Product Specification</h2>
+            <h2 className="properties_title">Product Specification</h2>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <p
-              className="check"
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Value for money
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Brand
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Popular
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              After Sales
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Price
-            </p>
-            <p
-              style={{
-                textDecoration: "underline",
-                fontWeight: "600",
-                fontSize: "18px",
-              }}
-            >
-              Overall Score
-            </p>
+          <div className="product_spec">
+            <p className="properties">Value for money</p>
+            <p className="properties">Brand</p>
+            <p className="properties">Popular</p>
+            <p className="properties">After Sales</p>
+            <p className="properties">Price</p>
+            <p className="properties">Overall Score</p>
           </div>
         </Grid>
 
         {products && (
-          <Grid item xs={8} md={10}>
+          <Grid item xs={9} md={10}>
             <OwlCarousel
               className="owl-theme"
               nav
+              stagePadding={30}
               responsive={{
                 0: {
                   items: 1,
                 },
-                600: {
+                700: {
                   items: 2,
                 },
                 1000: {
-                  items: 4,
+                  items: 3,
                 },
               }}
             >
               {products.map((product, index) => {
                 // console.log(product);
                 return (
-                  // <Grid
-                  //   key={index}
-                  //   item
-                  //   xs={8}
-                  //   style={{
-                  //     border: "2px solid black",
-                  //     paddingBottom: "50px",
-                  //     borderRadius: "20px ",
-
-                  //     marginRight: "10px",
-                  //     boxShadow: "2px 2px 10px 2px ",
-                  //     background: "linear-gradient( lightgrey ,lightpink ",
-                  //   }}
-                  // >
-                  <div
-                    style={{
-                      border: "2px solid black",
-                      paddingBottom: "50px",
-                      // borderRadius: "20px ",
-                      boxShadow: "2px 2px 10px 2px ",
-
-                      background: "linear-gradient( lightgrey ,lightpink ",
-                    }}
-                  >
+                  <div className={classes.productContainer}>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        height: "55%",
                         backgroundColor: "lightgrey ",
                       }}
                     >
                       <img
-                        src={product.Imageurl}
+                        src={product.Image}
                         alt="Fridge"
-                        style={{ width: "52%" }}
+                        style={{ width: "100px" }}
                       />
                       <p
                         style={{
@@ -184,89 +106,50 @@ function NewRecommendation() {
                       >
                         {product.Product}
                       </p>
-                      <div style={{ display: "flex" }}>
-                        <Button
-                          className={classes.FlipkartClass}
-                          href={product.Flipkart}
-                        >
-                          Flipkart
-                        </Button>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-around",
+                      }}
+                    >
+                      <Button
+                        className={classes.FlipkartClass}
+                        href={product.Flipkarturl}
+                        target="_blank"
+                      >
+                        Flipkart
+                      </Button>
 
-                        <Button
-                          className={classes.AmazonClass}
-                          href={product.Amazon}
-                        >
-                          Amazon
-                        </Button>
-                        <Button
-                          className={classes.RelianceClass}
-                          href={product.Reliance}
-                        >
-                          Reliance
-                        </Button>
-                      </div>
+                      <Button
+                        className={classes.AmazonClass}
+                        href={product.Amazonurl}
+                        target="_blank"
+                      >
+                        Amazon
+                      </Button>
+                      <Button
+                        className={classes.RelianceClass}
+                        href={product.Relianceurl}
+                        target="_blank"
+                      >
+                        Reliance
+                      </Button>
                     </div>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
+                        marginTop: "25px",
                       }}
                     >
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.Valueformoney}
-                      </p>
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.Brand}
-                      </p>
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.Valueformoney}
-                      </p>
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.AfterSales}
-                      </p>
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.Price}
-                      </p>
-                      <p
-                        style={{
-                          fontWeight: "700",
-                          fontSize: "18px",
-                          color: "black",
-                        }}
-                      >
-                        {product.Score}
-                      </p>
+                      <p className="properties">{product.Valueformoney}</p>
+                      <p className="properties">{product.Brand}</p>
+                      <p className="properties">{product.Valueformoney}</p>
+                      <p className="properties">{product.AfterSales}</p>
+                      <p className="properties">{product.Price}</p>
+                      <p className="properties">{product.Score}</p>
                     </div>
                   </div>
                   // </Grid>

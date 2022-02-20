@@ -77,6 +77,8 @@ button {
 .video_player {
   width: 30vw;
   height: 20vw;
+  min-width: 250px;
+  min-height: 200px;
 }
 
 .question-ans img {
@@ -151,4 +153,9 @@ input[type="radio"] {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+@media only screen and (max-width: 600px) {
+  .video {
+    flex-direction: column;
+  }
 }

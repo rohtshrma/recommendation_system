@@ -8,3 +8,33 @@
 .owl-prev {
   left: 0 !important;
 }
+.owl-item {
+  padding: 0 !important;
+}
+.owl-stage {
+  padding-left: 0 !important;
+}
+
+.properties_title {
+  text-align: center;
+}
+.product_spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.properties {
+  font-weight: 600;
+  font-size: 3vw;
+  color: black;
+}
+@media only screen and (max-width: 600px) {
+  .properties_title {
+    display: none;
+  }
+}
+@media screen and (min-width: 700px) {
+  .properties {
+    font-size: 20px;
+  }
+}
