@@ -7,7 +7,7 @@ import bannerImg from "../images/banner-1400PX.png";
 function Header() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light ">
         <div id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
@@ -37,7 +37,7 @@ function Header() {
           height: "300px",
           backgroundColor: "lightgrey",
           backgroundSize: "1350px 300px",
-          boxShadow: "0 0 10px 10px grey",
+          // boxShadow: "0 0 10px 10px grey",
           marginBottom: "30px",
           backgroundRepeat: "no-repeat",
         }}
