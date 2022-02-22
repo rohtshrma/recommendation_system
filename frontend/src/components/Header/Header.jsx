@@ -82,43 +82,43 @@ function Header() {
       {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
     
 
-      {/* <Grid container spacing={2}>
-  <Grid  xs={2}>
+      <Grid container spacing={4} className=" mb-3" style={{margin:"0 9%"}} >
+  <Grid  xs={2} >
     
-    <Button variant="outlined">Outlined</Button>
+    <Button variant="contained" className="btn-classes"  >Television</Button>
 
     
   </Grid>
-  <Grid  xs={2}>
-    
-    <Button variant="outlined">Outlined</Button>
-    
-  </Grid>
-  <Grid  xs={2}>
-    
-      <Button variant="outlined">Outlined</Button>
+  <Grid  xs={2} >
+   
+    <Button variant="contained" className="btn-classes" >Washing Machine</Button>
     
   </Grid>
   <Grid  xs={2}>
     
-    <Button variant="outlined">Outlined</Button>
+      <Button variant="contained" className="btn-classes" >Micro Oven</Button>
+    
+  </Grid>
+  <Grid  xs={2}>
+    
+    <Button variant="contained" className="btn-classes" >Air Conditioner</Button>
     
   </Grid>
   <Grid    xs={2}>
     
-    <Button variant="outlined">Outlined</Button>
+    <Button variant="contained" className="btn-classes" >Refrigerator</Button>
     
   </Grid>
-</Grid> */}
+</Grid>
 
 
-<Stack spacing={2} direction="row" className="mb-3">
+{/* <Stack spacing={2} direction="row" className="mb-3">
       <Button variant="contained">Television</Button>
       <Button variant="contained">Washing Machine</Button>
       <Button variant="contained">Micro Oven</Button>
       <Button variant="contained">Air Conditioner</Button>
       <Button variant="contained">Refrigerator</Button>
-    </Stack>
+    </Stack> */}
 
 
 
