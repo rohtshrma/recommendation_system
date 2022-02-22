@@ -1,5 +1,5 @@
 .company_logo {
-  width: 100px;
+  width: 120px;
   background-color: #f8f9fa !important;
 }
 
@@ -12,6 +12,22 @@
 /* .bannerImage{
   width:100vw;
 } */
+
+.navigation_class{
+  background-color: #0164C9;
+}
+
+.navbar-nav{
+  margin-left: 50px;
+}
+.nav-link{
+  background-color: #0164C9;
+}
+
+.nav-item{
+  padding: 0px !important;
+}
+
 
 /* @import url(//fonts.googleapis.com/css?family=Montserrat:400,700); */
 .static-slider10 {
