@@ -52,9 +52,7 @@ for(let i=0;i<rows.length;i++)
     obj[rows[0]._sheet.headerValues[j]]=rows[i]._rawData[j];
   }
   productdata.push(obj);
-}
-
-}
+}}
 accessSpreadsheet();
 
 Formdata.deleteMany({})
@@ -100,7 +98,7 @@ for (var i = 0; i < questiondata.length; i++) {
 
 
 app.get("/getquestions/:product", (req, res) => {
-  Questiondata.find({ Product: req.params.product })
+  Questiondata.find({ Product: req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1) })
     .then((data) => {
       if (data.length == 0) {
         console.log("hit");
@@ -115,14 +113,14 @@ app.get("/getquestions/:product", (req, res) => {
 });
 
 app.get("/answer/:combination/:product", (req, res) => {
-  var coll=Formdata.find({Combination: req.params.combination,Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1)},{limit:1});
+  var coll=Formdata.find({Combination: req.params.combination,Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1)},{limit:1}).sort({ValueforMoney:1});
     coll.count().then((count) => {
       if(count==0)
       {
         Formdata.find({
           Combination:99999,
           Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
-        })
+        }).sort({ValueforMoney:1})
       
         .then((data) => {
             res.json(data);
@@ -137,7 +135,7 @@ app.get("/answer/:combination/:product", (req, res) => {
         Formdata.find({
           Combination: req.params.combination,
           Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
-        }).then((data) => {
+        }).sort({ValueforMoney:1}).then((data) => {
             res.json(data);
           })
           .catch((error) => {
