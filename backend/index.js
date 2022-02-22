@@ -23,9 +23,10 @@ mongoose.connect(CONNECTION_URL, {
   useUnifiedTopology: true,
 });
 
-const data = await csv().fromFile(csvFilePath);
+const data =  await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
+const productdata=[];
 const doc = new GoogleSpreadsheet(
   "1m3zWmEqMXc2A9EiRCXC9N627tqsSuNSI7Dpe0-EofGQ"
 );
@@ -39,16 +40,20 @@ async function accessSpreadsheet() {
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
   const rows = await sheet.getRows();
-  console.log(rows[0].ID);
 
-  /*
- rows.forEach((row)=>{
-  printdata(row);
- })
- */
-}
-
-//accessSpreadsheet();
+   
+    
+for(let i=0;i<rows.length;i++)
+{
+  var obj={};
+  
+  for(let j=0;j<rows[0]._sheet.headerValues.length;j++)
+  {
+    obj[rows[0]._sheet.headerValues[j]]=rows[i]._rawData[j];
+  }
+  productdata.push(obj);
+}}
+accessSpreadsheet();
 
 Formdata.deleteMany({})
   .then(function () {
@@ -58,8 +63,9 @@ Formdata.deleteMany({})
     console.log(error);
   });
 //Uncomment these code to save data in db
-for (var i = 0; i < data.length; i++) {
-  const formdata1 = new Formdata(data[i]);
+setTimeout(function(){
+for (var i = 0; i < productdata.length; i++) {
+  const formdata1 = new Formdata(productdata[i] );
 
   formdata1.save((error) => {
     if (error) {
@@ -68,7 +74,7 @@ for (var i = 0; i < data.length; i++) {
       console.log("Product data Successfully saved");
     }
   });
-}
+}}, 5000)
 // // // Uncomment these code to save question into db
 
 Questiondata.deleteMany({})
@@ -90,8 +96,9 @@ for (var i = 0; i < questiondata.length; i++) {
   });
 }
 
+
 app.get("/getquestions/:product", (req, res) => {
-  Questiondata.find({ Product: req.params.product })
+  Questiondata.find({ Product: req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1) })
     .then((data) => {
       if (data.length == 0) {
         console.log("hit");
@@ -106,17 +113,37 @@ app.get("/getquestions/:product", (req, res) => {
 });
 
 app.get("/answer/:combination/:product", (req, res) => {
-  Formdata.find({
-    Combination: req.params.combination,
-    Product:
-      req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
-  })
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((error) => {
-      console.log("error happened", error);
-    });
+  var coll=Formdata.find({Combination: req.params.combination,Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1)},{limit:1}).sort({ValueforMoney:1});
+    coll.count().then((count) => {
+      if(count==0)
+      {
+        Formdata.find({
+          Combination:99999,
+          Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
+        }).sort({ValueforMoney:1})
+      
+        .then((data) => {
+            res.json(data);
+          })
+          .catch((error) => {
+            console.log("error happened", error);
+          });    
+
+      }
+      else
+      {
+        Formdata.find({
+          Combination: req.params.combination,
+          Product:req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
+        }).sort({ValueforMoney:1}).then((data) => {
+            res.json(data);
+          })
+          .catch((error) => {
+            console.log("error happened", error);
+          });
+      }
+  });
+
 });
 
 app.get("/savedata", (req, res) => {
