@@ -5,7 +5,7 @@ const formdata = new Schema({
   Combination: String,
   Product: String,
   Price: String,
-  Valueformoney: String,
+  Valueformoney:Number,
   Brand: String,
   AfterSales: String,
   Score: String,
