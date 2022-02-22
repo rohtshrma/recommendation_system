@@ -5,6 +5,14 @@ html{
   overflow-x: hidden;
 }
 
+
+
+.refri_img img{
+  width: 150px !important;
+  text-align: center !important;
+  margin: 0 auto; 
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   max-width: 300px;

@@ -2,7 +2,7 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import ac from "../images/AC_image.jpeg";
+import ac from "../images/AC_image.png";
 import tv from "../images/TV_image.webp";
 import washing from "../images/Washing_machine_image.png";
 import micro from "../images/Microwave_image.jpeg";
@@ -77,7 +77,7 @@ const Carousel = () => {
         </div>
         <div className="carousel-box">
           <div class="card">
-            <img className="img" src={ac} alt="Img1" />
+            <img className="img " src={ac} alt="Img1" />
             <h1>AC</h1>
             <Button
               variant="contained"
@@ -89,8 +89,8 @@ const Carousel = () => {
           </div>
         </div>
         <div className="carousel-box">
-          <div class="card">
-            <img className="img" src={ref} alt="Img1" />
+          <div class="card refri_img">
+            <img className="img " src={ref} alt="Img1" />
             <h1>Refrigerator</h1>
             <Button
               variant="contained"
