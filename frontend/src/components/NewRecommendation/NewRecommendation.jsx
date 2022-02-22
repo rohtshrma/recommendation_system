@@ -11,6 +11,7 @@ import OwlCarousel from "react-owl-carousel";
 import useStyles from "./style.js";
 
 import Loading from "../Loading/Loading";
+import { height } from "@mui/system";
 
 function NewRecommendation() {
   const classes = useStyles();
@@ -39,17 +40,15 @@ function NewRecommendation() {
   }
 
   return (
-    <div style={{ backgroundColor: "lightgrey " }}>
-      <h1 className="text-center mb-5">All Best Recommendations For You</h1>
-
+    <div >
+         <div className="main_container">
+          
+          <p className="text-center heading">All Best Recommendations For You</p>
+          </div>
       <Grid container>
-        <Grid item xs={3} md={2} style={{ paddingBottom: "70px" }}>
-          <div style={{ height: "325px" }}>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+        <Grid item xs={3} md={2} className="left_recomon" >
+          <div   className="left_recom">
+        
             <h2 className="properties_title">Product Specification</h2>
           </div>
           <div className="product_spec">
@@ -63,7 +62,7 @@ function NewRecommendation() {
         </Grid>
 
         {products && (
-          <Grid item xs={9} md={10}>
+          <Grid item xs={9} md={10} className="right_container">
             <OwlCarousel
               className="owl-theme"
               nav
@@ -83,25 +82,26 @@ function NewRecommendation() {
               {products.map((product, index) => {
                 // console.log(product);
                 return (
-                  <div className={classes.productContainer}>
+                  <div className="productContainer">
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        backgroundColor: "lightgrey ",
+                        backgroundColor: "white ",
+                        
                       }}
                     >
                       <img
                         src={product.Image}
                         alt="Fridge"
-                        style={{ width: "100px" }}
+                        style={{ width: "80px" , height:"200px"}}
                       />
                       <p
                         style={{
                           color: "black",
                           fontWeight: "600",
-                          fontSize: "20px",
+                          fontSize: "18px",
                         }}
                       >
                         {product.Product}
