@@ -1,9 +1,11 @@
 import React from "react";
 import "./Header.css";
 import bannerImg from "../images/banner-1400PX.png";
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <>
       {/* header end */}
@@ -45,42 +47,61 @@ function Header() {
       </h6>
       {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
 
-      {/* <Grid container spacing={2}>
-  <Grid  xs={2}>
-    
-    <Button variant="outlined">Outlined</Button>
+      <Grid container spacing={4} className=" mb-3" style={{ margin: "0 9%" }}>
+        <Grid xs={2}>
+          <Button
+            variant="contained"
+            className="btn-classes"
+            onClick={() => navigate("/question/refrigerator")}
+          >
+            Television
+          </Button>
+        </Grid>
+        <Grid xs={2}>
+          <Button
+            variant="contained"
+            className="btn-classes"
+            onClick={() => navigate("/question/refrigerator")}
+          >
+            Washing Machine
+          </Button>
+        </Grid>
+        <Grid xs={2}>
+          <Button
+            variant="contained"
+            className="btn-classes"
+            onClick={() => navigate("/question/refrigerator")}
+          >
+            Micro Oven
+          </Button>
+        </Grid>
+        <Grid xs={2}>
+          <Button
+            variant="contained"
+            className="btn-classes"
+            onClick={() => navigate("/question/refrigerator")}
+          >
+            Air Conditioner
+          </Button>
+        </Grid>
+        <Grid xs={2}>
+          <Button
+            variant="contained"
+            className="btn-classes"
+            onClick={() => navigate("/question/refrigerator")}
+          >
+            Refrigerator
+          </Button>
+        </Grid>
+      </Grid>
 
-    
-  </Grid>
-  <Grid  xs={2}>
-    
-    <Button variant="outlined">Outlined</Button>
-    
-  </Grid>
-  <Grid  xs={2}>
-    
-      <Button variant="outlined">Outlined</Button>
-    
-  </Grid>
-  <Grid  xs={2}>
-    
-    <Button variant="outlined">Outlined</Button>
-    
-  </Grid>
-  <Grid    xs={2}>
-    
-    <Button variant="outlined">Outlined</Button>
-    
-  </Grid>
-</Grid> */}
-
-      <Stack spacing={2} direction="row" className="mb-3">
+      {/* <Stack spacing={2} direction="row" className="mb-3">
         <Button variant="contained">Television</Button>
         <Button variant="contained">Washing Machine</Button>
         <Button variant="contained">Micro Oven</Button>
         <Button variant="contained">Air Conditioner</Button>
         <Button variant="contained">Refrigerator</Button>
-      </Stack>
+      </Stack> */}
     </>
   );
 }

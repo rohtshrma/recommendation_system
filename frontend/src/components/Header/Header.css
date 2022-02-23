@@ -3,6 +3,10 @@
   background-color: #f8f9fa !important;
 }
 
+
+.btn-classes{
+  font-size: 13px !important;
+}
 .navbar-brand {
   font-size: 30px;
   font-weight: 700;
@@ -47,6 +51,15 @@
   line-height: 24px;
 }
 
+
+@media (max-width: 1070px) {
+.btn-classes{
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  font-size: 13px !important;
+}}
+
+
 @media (max-width: 900px) {
   .static-slider10 .title {
     font-size: 40px;
@@ -70,6 +83,13 @@
 .static-slider10 .op-8 {
   opacity: 0.8;
 }
+
+@media (max-width:900px) {
+  .btn-classes{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    font-size: 11px !important;
+  }}
 
 @media (max-width: 320px) {
   .static-slider10 .title {

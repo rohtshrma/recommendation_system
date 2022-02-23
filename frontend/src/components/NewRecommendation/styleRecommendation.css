@@ -37,4 +37,44 @@
   .properties {
     font-size: 20px;
   }
+
+  
+}
+/* abrar css */
+.left_recom{
+  margin-top: 120px;
+  margin-bottom: 130px;
+  color: gray;
+  
+ 
+ 
+}
+.left_recomon{
+  /* background-color: #e9eef1; */
+}
+.right_container{
+  
+}
+.productContainer{
+  border: 2px solid rgb(196, 185, 185);
+ 
+  margin: 10px;
+}
+.productContainer img{
+  margin-top: 20px;
+}
+.main_container{
+  background-color:#3498db ;
+  padding-top: 7px;
+  padding-bottom: 4px;
+  height: auto;
+  color: #fff;
+}
+/* .heading_reco {
+  padding-top: 10px;
+  padding-left: 280px ;
+} */
+.main_container p{
+  font-size: 30px;
+  font-weight: 600;
 }
