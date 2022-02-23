@@ -7,6 +7,7 @@ import axios from "axios";
 import Loading from "../Loading/Loading";
 import { QuestionContext } from "../../globalContext/globalState";
 import "./question.css";
+import Navbar from "../Navbar/Navbar";
 
 function Question() {
   const [questions, setQuestions] = useState(null);
@@ -43,10 +44,10 @@ function Question() {
   const getQuestions = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/getquestions/${product}`
+        `${process.env.REACT_APP_API_URL}/getquestions/${product}`
       );
 
-      // console.log(data);
+      console.log(data);
       const noOfQuestion = data.length;
       const newAns = [];
       for (let i = 0; i < noOfQuestion; i++) {
@@ -62,6 +63,7 @@ function Question() {
   useEffect(() => {
     // setFormData({ ...formData, product });
     localStorage.removeItem("questionData");
+    // console.log(process.env.REACT_APP_API_URL);
     getQuestions();
   }, []);
   // console.log(formData);

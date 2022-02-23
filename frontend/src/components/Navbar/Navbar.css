@@ -1,0 +1,19 @@
+.company_logo {
+  width: 120px;
+  background-color: #f8f9fa !important;
+}
+
+.navigation_class {
+  background-color: #0164c9;
+}
+
+.navbar-nav {
+  margin-left: 50px;
+}
+.nav-link {
+  background-color: #0164c9;
+}
+
+.nav-item {
+  padding: 0px !important;
+}
