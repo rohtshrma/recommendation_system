@@ -5,7 +5,7 @@
 
 
 .btn-classes{
-  font-size: 13px !important;
+  font-size: 11px !important;
 }
 .navbar-brand {
   font-size: 30px;
@@ -52,6 +52,10 @@
 }
 
 
+
+
+
+/* media queries */
 @media (max-width: 1070px) {
 .btn-classes{
   padding-left: 2px !important;
@@ -89,7 +93,28 @@
     padding-left: 2px !important;
     padding-right: 2px !important;
     font-size: 11px !important;
-  }}
+  }
+.btn_cont{
+  margin-bottom: 20px;
+}
+
+}
+@media (max-width: 600px) {
+.buttons_grid{
+ margin-left: 6% !important; 
+}
+
+.static-slider10{
+  background-size: 100% 70% !important;
+}
+}
+
+
+@media (max-width: 420px) {
+.static-slider10{
+  background-size: 100% 60% !important;
+}
+}
 
 @media (max-width: 320px) {
   .static-slider10 .title {

@@ -34,9 +34,12 @@ const Carousel = () => {
           },
         }}
       >
+      
         <div className="carousel-box">
           <div class="card">
-            <img className="img" src={tv} alt="Img1" />
+            <img className="img" src={tv} alt="Img1" 
+             onClick={() => navigate("/question/Refrigerator")}
+              />
             <h1>TV</h1>
             <Button
               variant="contained"
@@ -47,9 +50,12 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+       
         <div className="carousel-box">
           <div class="card">
-            <img className="img" src={washing} alt="Img1" />
+            <img className="img" src={washing} alt="Img1" 
+               onClick={() => navigate("/question/Refrigerator")}
+            />
             <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
             <Button
@@ -61,9 +67,12 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+       
         <div className="carousel-box">
           <div class="card">
-            <img className="img" src={micro} alt="Img1" />
+            <img className="img" src={micro} alt="Img1" 
+             onClick={() => navigate("/question/Refrigerator")}
+              />
             <h1>Micro Oven</h1>
 
             <Button
@@ -75,9 +84,12 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+       
         <div className="carousel-box">
           <div class="card">
-            <img className="img " src={ac} alt="Img1" />
+            <img className="img " src={ac} alt="Img1"
+             onClick={() => navigate("/question/Refrigerator")}
+             />
             <h1>AC</h1>
             <Button
               variant="contained"
@@ -88,9 +100,12 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+       
         <div className="carousel-box">
           <div class="card refri_img">
-            <img className="img " src={ref} alt="Img1" />
+            <img className="img " src={ref} alt="Img1" 
+               onClick={() => navigate("/question/Refrigerator")}
+            />
             <h1>Refrigerator</h1>
             <Button
               variant="contained"

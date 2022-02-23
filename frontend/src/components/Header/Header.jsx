@@ -52,10 +52,14 @@ function Header() {
           backgroundImage: "url(" + bannerImg + ")",
           height: "300px",
           backgroundColor: "lightgrey",
-          backgroundSize: "1100px 300px",
+          // backgroundSize: "1100px 300px ",
           // boxShadow: "0 0 10px 10px grey",
           marginBottom: "30px",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "no-repeat",  
+          backgroundSize:" 95% 90%",
+
+
+
         }}
       >
         <div className="container">
@@ -68,13 +72,13 @@ function Header() {
       {/* banner end */}
 
       <h1
-        className=" title text-dark text-center font-weight-bold "
+        className=" title text-dark text-center font-weight-500 "
         style={{ fontSize: "35px" }}
       >
         Get Product recommendation according to your Need
       </h1>
       <h6
-        className=" text-dark text-center font-weight-bold op-8 mb-5"
+        className=" text-dark text-center font-weight-bolder op-8 mb-5"
         style={{ fontSize: "35px" }}
       >
         What are you planning to buy?
@@ -82,29 +86,29 @@ function Header() {
       {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
     
 
-      <Grid container spacing={4} className=" mb-3" style={{margin:"0 9%"}} >
-  <Grid  xs={2} >
+      <Grid container spacing={-5} className=" mb-3 buttons_grid" style={{margin:"0 0 0 2%"}}  >
+  <Grid  xs={12} sm={6} md={2} className="btn_cont" >
     
     <Button variant="contained" className="btn-classes"  >Television</Button>
 
     
   </Grid>
-  <Grid  xs={2} >
+  <Grid  xs={12} sm={6} md={3} className="btn_cont"  >
    
     <Button variant="contained" className="btn-classes" >Washing Machine</Button>
     
   </Grid>
-  <Grid  xs={2}>
+  <Grid  xs={12} sm={6} md={2} className="btn_cont" >
     
       <Button variant="contained" className="btn-classes" >Micro Oven</Button>
     
   </Grid>
-  <Grid  xs={2}>
+  <Grid  xs={12} sm={6} md={3} className="btn_cont"  >
     
     <Button variant="contained" className="btn-classes" >Air Conditioner</Button>
     
   </Grid>
-  <Grid    xs={2}>
+  <Grid    xs={12} sm={6} md={2} className="btn_cont" >
     
     <Button variant="contained" className="btn-classes" >Refrigerator</Button>
     
