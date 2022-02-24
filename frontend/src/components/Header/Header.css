@@ -6,6 +6,8 @@
 
 .btn-classes{
   font-size: 11px !important;
+  box-shadow: 0 5px 5px rgb(139, 135, 135) !important;
+
 }
 .navbar-brand {
   font-size: 30px;
@@ -62,7 +64,11 @@
   padding-right: 2px !important;
   font-size: 13px !important;
 }}
-
+@media (max-width: 1000px) {
+  .btn-classes{
+    font-size: 11px !important;
+  }
+}
 
 @media (max-width: 900px) {
   .static-slider10 .title {

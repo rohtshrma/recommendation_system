@@ -12,6 +12,8 @@ import useStyles from "./style.js";
 
 import Loading from "../Loading/Loading";
 import { height } from "@mui/system";
+import Footer from "../Footer/Footer"
+
 
 function NewRecommendation() {
   const classes = useStyles();
@@ -159,7 +161,10 @@ function NewRecommendation() {
           </Grid>
         )}
       </Grid>
+      <Footer/>
+
     </div>
+
   );
 }
 

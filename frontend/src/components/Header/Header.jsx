@@ -51,12 +51,12 @@ function Header() {
         style={{
           backgroundImage: "url(" + bannerImg + ")",
           height: "300px",
-          backgroundColor: "lightgrey",
+          // backgroundColor: "lightgrey",
           // backgroundSize: "1100px 300px ",
           // boxShadow: "0 0 10px 10px grey",
-          marginBottom: "30px",
+          // marginBottom: "30px",
           backgroundRepeat: "no-repeat",  
-          backgroundSize:" 95% 90%",
+          backgroundSize:" 80% 90%",
 
 
 
@@ -73,27 +73,31 @@ function Header() {
 
       <h1
         className=" title text-dark text-center font-weight-500 "
-        style={{ fontSize: "35px" }}
+        style={{ fontSize: "25px" }}
       >
         Get Product recommendation according to your Need
       </h1>
       <h6
-        className=" text-dark text-center font-weight-bolder op-8 mb-5"
-        style={{ fontSize: "35px" }}
+        className=" text-dark text-center font-weight-bolder op-8 "
+        style={{ fontSize: "25px" }}
       >
         What are you planning to buy?
       </h6>
       {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
     
-
+      
       <Grid container spacing={-5} className=" mb-3 buttons_grid" style={{margin:"0 0 0 2%"}}  >
+      <Grid   md={1} ></Grid>
   <Grid  xs={12} sm={6} md={2} className="btn_cont" >
     
     <Button variant="contained" className="btn-classes"  >Television</Button>
+    
 
     
   </Grid>
-  <Grid  xs={12} sm={6} md={3} className="btn_cont"  >
+
+  
+  <Grid  xs={12} sm={6} md={2} className="btn_cont"  >
    
     <Button variant="contained" className="btn-classes" >Washing Machine</Button>
     
@@ -103,7 +107,7 @@ function Header() {
       <Button variant="contained" className="btn-classes" >Micro Oven</Button>
     
   </Grid>
-  <Grid  xs={12} sm={6} md={3} className="btn_cont"  >
+  <Grid  xs={12} sm={6} md={2} className="btn_cont"  >
     
     <Button variant="contained" className="btn-classes" >Air Conditioner</Button>
     
