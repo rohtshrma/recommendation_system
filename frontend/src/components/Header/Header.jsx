@@ -36,13 +36,13 @@ function Header() {
 
       <h1
         className=" title text-dark text-center font-weight-500 "
-        style={{ fontSize: "25px" }}
+        style={{ fontSize: "2vw" }}
       >
         Get Product recommendation according to your Need
       </h1>
       <h6
         className=" text-dark text-center font-weight-bolder op-8 "
-        style={{ fontSize: "25px" }}
+        style={{ fontSize: "2vw" }}
       >
         What are you planning to buy?
       </h6>

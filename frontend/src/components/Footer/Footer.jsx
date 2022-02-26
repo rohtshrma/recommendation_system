@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Footer.css";
 import {
     MDBFooter,
     MDBContainer,
@@ -104,32 +105,10 @@ const Footer = () => {
       </div>
     </MDBFooter> */}
 
-    <MDBFooter bgColor='black' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span className='text-white'>Get connected with us on social networks:</span>
-        </div>
-
-        <div className='text-white'>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-facebook-f'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-twitter'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-google'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-instagram'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-linkedin'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-github'></i>
-          </a>
-        </div>
+    <MDBFooter bgColor='black' className='text-center text-lg-start text-muted footer' >
+      <section className='d-flex justify-content-center justify-content-lg-between '>
+      
+       
       </section>
 
       <section className=''>
@@ -150,7 +129,7 @@ const Footer = () => {
                 rippleColor='light'
                 className='bg-image hover-overlay shadow-1-strong rounded'
               >
-                <img src={logoImg} className='w-100' />
+                <img src={logoImg} className='w-50 logoimage ' />
                 <a href='#!'>
                   <div
                     className='mask'
@@ -206,15 +185,35 @@ const Footer = () => {
         </div>
       </section>
 
-      <div className='text-center p-4 text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+      <div className='text-center p-4 text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', display:'flex',justifyContent:'center' }}>
         © 2021 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
           fastrivi.com
         </a>
+
+        <div className='text-white link-content' >
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-facebook-f'></i>
+          </a>
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-twitter'></i>
+          </a>
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-google'></i>
+          </a>
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-instagram'></i>
+          </a>
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-linkedin'></i>
+          </a>
+          <a href='' className='me-4 text-reset'>
+            <i className='fab fa-github'></i>
+          </a>
+        </div>
       </div>
     </MDBFooter>
-
-
+    
 
     </>
   )
