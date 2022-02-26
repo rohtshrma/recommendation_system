@@ -12,8 +12,7 @@ import useStyles from "./style.js";
 
 import Loading from "../Loading/Loading";
 import { height } from "@mui/system";
-import Footer from "../Footer/Footer"
-
+import Footer from "../Footer/Footer";
 
 function NewRecommendation() {
   const classes = useStyles();
@@ -52,12 +51,27 @@ function NewRecommendation() {
             <h2 className="properties_title">Product Specification</h2>
           </div>
           <div className="product_spec">
-            <p className="properties">Value for money</p>
-            <p className="properties">Brand</p>
-            <p className="properties">Popular</p>
-            <p className="properties">After Sales</p>
-            <p className="properties">Price</p>
-            <p className="properties">Overall Score</p>
+            <div className="product_list">
+              <p className="properties">Value for money</p>
+            </div>
+
+            <div className="product_list">
+              <p className="properties">Brand</p>
+            </div>
+            <div className="product_list">
+              <p className="properties">Popular</p>
+            </div>
+            <div className="product_list">
+              <p className="properties">After Sales</p>
+            </div>
+
+            <div className="product_list">
+              <p className="properties">Price</p>
+            </div>
+
+            <div className="product_list">
+              <p className="properties">Overall Score</p>
+            </div>
           </div>
         </Grid>
 
@@ -117,31 +131,31 @@ function NewRecommendation() {
                       }}
                     >
                       {product.Flipkarturl && (
-                        <Button
+                        <button
                           className={classes.FlipkartClass}
                           href={product.Flipkarturl}
                           target="_blank"
                         >
                           Flipkart
-                        </Button>
+                        </button>
                       )}
                       {product.Amazonurl && (
-                        <Button
+                        <button
                           className={classes.AmazonClass}
                           href={product.Amazonurl}
                           target="_blank"
                         >
                           Amazon
-                        </Button>
+                        </button>
                       )}
                       {product.Relianceurl && (
-                        <Button
+                        <button
                           className={classes.RelianceClass}
                           href={product.Relianceurl}
                           target="_blank"
                         >
                           Reliance
-                        </Button>
+                        </button>
                       )}
                     </div>
                     <div
@@ -152,11 +166,22 @@ function NewRecommendation() {
                         marginTop: "25px",
                       }}
                     >
+                      <hr />
+
                       <p className="properties">{product.Valueformoney}</p>
+                      <hr />
                       <p className="properties">{product.Brand}</p>
+                      <hr />
+
                       <p className="properties">{product.Valueformoney}</p>
+                      <hr />
+
                       <p className="properties">{product.AfterSales}</p>
+                      <hr />
+
                       <p className="properties">{product.Price}</p>
+                      <hr />
+
                       <p className="properties">{product.Score}</p>
                     </div>
                   </div>
@@ -167,10 +192,8 @@ function NewRecommendation() {
           </Grid>
         )}
       </Grid>
-      <Footer/>
-
+      <Footer />
     </div>
-
   );
 }
 

@@ -2,37 +2,29 @@ import { makeStyles } from "@mui/styles";
 
 export default makeStyles({
   FlipkartClass: {
-    backgroundColor: "#F7A200 !important",
-    color: "white !important",
-    marginLeft: "20% !important",
-    marginRight: "20% !important",
+    backgroundColor: "#ffd814 !important",
+    margin: "0 1vw",
+    color: "black",
+    boxShadow: " 0 5px 5px rgb(140 129 130)",
 
     // width: "80px",
   },
 
   AmazonClass: {
     backgroundColor: "#3498db !important ",
-    marginLeft: "20% !important",
-    marginRight: "20% !important",
-    color: "white !important",
-    marginTop: "7px !important",
+    color: "black",
+    margin: "10px 1vw",
+    boxShadow: " 0 5px 5px rgb(140 129 130)",
 
     // width: "80px",
   },
 
   RelianceClass: {
     backgroundColor: "#E42529 !important ",
-    marginLeft: "20% !important",
-    marginRight: "20% !important",
-    color: "white !important",
-    marginTop: "7px !important",
+    margin: "0 1vw",
+    color: "black",
+    boxShadow: " 0 5px 5px rgb(140 129 130)",
 
     // width: "80px",
   },
-  // productContainer: {
-  //   border: "1px solid black",
-  //   margin:"10px",
-  //   paddingBottom: "50px",
-  //   background: "linear-gradient( lightgrey ,lightpink) ",
-  // },
 });

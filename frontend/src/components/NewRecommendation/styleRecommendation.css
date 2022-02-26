@@ -41,7 +41,7 @@
 /* abrar css */
 .left_recom {
   margin-top: 120px;
-  height: 280px;
+  height: 270px;
   color: gray;
 }
 
@@ -68,3 +68,21 @@
   font-size: 30px;
   font-weight: 600;
 }
+.firstProduct {
+  margin-left: 0;
+}
+hr {
+  margin: 0;
+  width: 100%;
+  color: black;
+  height: 0 !important;
+}
+p {
+  margin: 4px 0 !important;
+}
+/* .product_list {
+  padding: 0 20px;
+  width: 15vw;
+  background-color: #80808014;
+  margin: 4px 0;
+} */

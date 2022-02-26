@@ -27,52 +27,58 @@ const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
 const productdata = [];
-const doc = new GoogleSpreadsheet(
-  "1m3zWmEqMXc2A9EiRCXC9N627tqsSuNSI7Dpe0-EofGQ"
-);
-async function accessSpreadsheet() {
-  await doc.useServiceAccountAuth({
-    client_email: creds.client_email,
-    private_key: creds.private_key,
-  });
 
-  await doc.loadInfo(); // loads document properties and worksheets
-
-  const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
-  const rows = await sheet.getRows();
-
-  for (let i = 0; i < rows.length; i++) {
-    var obj = {};
-
-    for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
-      obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
-    }
-    productdata.push(obj);
-  }
-}
-accessSpreadsheet();
-
-Formdata.deleteMany({})
-  .then(function () {
-    console.log("Form Data deleted");
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-//Uncomment these code to save data in db
-setTimeout(function () {
-  for (var i = 0; i < productdata.length; i++) {
-    const formdata1 = new Formdata(productdata[i]);
-
-    formdata1.save((error) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Product data Successfully saved");
-      }
+const updateProduct = (req, res) => {
+  const doc = new GoogleSpreadsheet(
+    "1m3zWmEqMXc2A9EiRCXC9N627tqsSuNSI7Dpe0-EofGQ"
+  );
+  async function accessSpreadsheet() {
+    await doc.useServiceAccountAuth({
+      client_email: creds.client_email,
+      private_key: creds.private_key,
     });
+
+    await doc.loadInfo(); // loads document properties and worksheets
+
+    const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+    const rows = await sheet.getRows();
+
+    for (let i = 0; i < rows.length; i++) {
+      var obj = {};
+
+      for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
+        obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
+      }
+      productdata.push(obj);
+    }
   }
-}, 5000);
+  accessSpreadsheet();
+
+  Formdata.deleteMany({})
+    .then(function () {
+      console.log("Form Data deleted");
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  //Uncomment these code to save data in db
+  setTimeout(function () {
+    for (var i = 0; i < productdata.length; i++) {
+      const formdata1 = new Formdata(productdata[i]);
+
+      formdata1.save((error) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Product data Successfully saved");
+        }
+      });
+    }
+  }, 5000);
+  res.json({
+    message: "Data Updated",
+  });
+};
 // // // Uncomment these code to save question into db
 
 // Questiondata.deleteMany({})
@@ -162,6 +168,7 @@ app.get("/savedata", (req, res) => {
       console.log("error happened", error);
     });
 });
+app.get("/update", updateProduct);
 
 app.get("/", (req, res) => {
   res.json("hello");
