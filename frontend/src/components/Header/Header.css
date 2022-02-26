@@ -127,3 +127,14 @@
     font-size: 25px !important;
   }
 }
+
+@media (max-width: 600px){
+  .title{
+    font-size:3vw  !important;
+  }
+}
+@media (max-width: 600px){
+  .text-dark {
+    font-size:3vw  !important;
+  }
+}
