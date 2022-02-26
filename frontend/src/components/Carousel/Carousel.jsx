@@ -35,7 +35,7 @@ const Carousel = () => {
         }}
       >
         <div className="carousel-box">
-          <div class="card">
+          <div class="card" onClick={() => navigate("/question/refrigerator")}>
             <img className="img" src={tv} alt="Img1" />
             <h1>TV</h1>
             <Button
@@ -47,8 +47,9 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+
         <div className="carousel-box">
-          <div class="card">
+          <div class="card" onClick={() => navigate("/question/refrigerator")}>
             <img className="img" src={washing} alt="Img1" />
             <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
@@ -61,8 +62,9 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+
         <div className="carousel-box">
-          <div class="card">
+          <div class="card" onClick={() => navigate("/question/refrigerator")}>
             <img className="img" src={micro} alt="Img1" />
             <h1>Micro Oven</h1>
 
@@ -75,8 +77,9 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+
         <div className="carousel-box">
-          <div class="card">
+          <div class="card" onClick={() => navigate("/question/refrigerator")}>
             <img className="img " src={ac} alt="Img1" />
             <h1>AC</h1>
             <Button
@@ -88,8 +91,12 @@ const Carousel = () => {
             </Button>
           </div>
         </div>
+
         <div className="carousel-box">
-          <div class="card refri_img">
+          <div
+            class="card refri_img"
+            onClick={() => navigate("/question/refrigerator")}
+          >
             <img className="img " src={ref} alt="Img1" />
             <h1>Refrigerator</h1>
             <Button

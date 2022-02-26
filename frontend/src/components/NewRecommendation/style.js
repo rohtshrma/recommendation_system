@@ -4,23 +4,30 @@ export default makeStyles({
   FlipkartClass: {
     backgroundColor: "#F7A200 !important",
     color: "white !important",
-    marginRight: "5px !important",
-    marginLeft: "5px !important",
-    width: "80px",
+    marginLeft: "20% !important",
+    marginRight: "20% !important",
+
+    // width: "80px",
   },
 
   AmazonClass: {
     backgroundColor: "#3498db !important ",
-    marginRight: "5px !important",
+    marginLeft: "20% !important",
+    marginRight: "20% !important",
     color: "white !important",
-    width: "80px",
+    marginTop: "7px !important",
+
+    // width: "80px",
   },
 
   RelianceClass: {
     backgroundColor: "#E42529 !important ",
+    marginLeft: "20% !important",
+    marginRight: "20% !important",
     color: "white !important",
-    width: "80px",
-    marginRight: "5px !important",
+    marginTop: "7px !important",
+
+    // width: "80px",
   },
   // productContainer: {
   //   border: "1px solid black",

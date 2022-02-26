@@ -40,15 +40,13 @@ function NewRecommendation() {
   }
 
   return (
-    <div >
-         <div className="main_container">
-          
-          <p className="text-center heading">All Best Recommendations For You</p>
-          </div>
+    <div>
+      <div className="main_container">
+        <p className="text-center heading">All Best Recommendations For You</p>
+      </div>
       <Grid container>
-        <Grid item xs={3} md={2} className="left_recomon" >
-          <div   className="left_recom">
-        
+        <Grid item xs={3} md={2} className="left_recomon">
+          <div className="left_recom">
             <h2 className="properties_title">Product Specification</h2>
           </div>
           <div className="product_spec">
@@ -71,11 +69,14 @@ function NewRecommendation() {
                 0: {
                   items: 1,
                 },
-                700: {
+                450: {
                   items: 2,
                 },
-                1000: {
+                700: {
                   items: 3,
+                },
+                1000: {
+                  items: 4,
                 },
               }}
             >
@@ -89,13 +90,12 @@ function NewRecommendation() {
                         flexDirection: "column",
                         alignItems: "center",
                         backgroundColor: "white ",
-                        
                       }}
                     >
                       <img
                         src={product.Image}
                         alt="Fridge"
-                        style={{ width: "80px" , height:"200px"}}
+                        style={{ width: "80px", height: "200px" }}
                       />
                       <p
                         style={{
@@ -110,31 +110,37 @@ function NewRecommendation() {
                     <div
                       style={{
                         display: "flex",
-                        justifyContent: "space-around",
+                        flexDirection: "column",
+                        height: "100px",
                       }}
                     >
-                      <Button
-                        className={classes.FlipkartClass}
-                        href={product.Flipkarturl}
-                        target="_blank"
-                      >
-                        Flipkart
-                      </Button>
-
-                      <Button
-                        className={classes.AmazonClass}
-                        href={product.Amazonurl}
-                        target="_blank"
-                      >
-                        Amazon
-                      </Button>
-                      <Button
-                        className={classes.RelianceClass}
-                        href={product.Relianceurl}
-                        target="_blank"
-                      >
-                        Reliance
-                      </Button>
+                      {product.Flipkarturl && (
+                        <Button
+                          className={classes.FlipkartClass}
+                          href={product.Flipkarturl}
+                          target="_blank"
+                        >
+                          Flipkart
+                        </Button>
+                      )}
+                      {product.Amazonurl && (
+                        <Button
+                          className={classes.AmazonClass}
+                          href={product.Amazonurl}
+                          target="_blank"
+                        >
+                          Amazon
+                        </Button>
+                      )}
+                      {product.Relianceurl && (
+                        <Button
+                          className={classes.RelianceClass}
+                          href={product.Relianceurl}
+                          target="_blank"
+                        >
+                          Reliance
+                        </Button>
+                      )}
                     </div>
                     <div
                       style={{
