@@ -17,12 +17,12 @@ function Header() {
         style={{
           backgroundImage: "url(" + bannerImg + ")",
           height: "300px",
-          backgroundColor: "lightgrey",
+          // backgroundColor: "lightgrey",
           // backgroundSize: "1100px 300px ",
           // boxShadow: "0 0 10px 10px grey",
-          marginBottom: "30px",
+          // marginBottom: "30px",
           backgroundRepeat: "no-repeat",
-          backgroundSize: " 95% 90%",
+          backgroundSize: " 80% 90%",
         }}
       >
         <div className="container">
@@ -36,13 +36,13 @@ function Header() {
 
       <h1
         className=" title text-dark text-center font-weight-500 "
-        style={{ fontSize: "35px" }}
+        style={{ fontSize: "25px" }}
       >
         Get Product recommendation according to your Need
       </h1>
       <h6
-        className=" text-dark text-center font-weight-bolder op-8 mb-5"
-        style={{ fontSize: "35px" }}
+        className=" text-dark text-center font-weight-bolder op-8 "
+        style={{ fontSize: "25px" }}
       >
         What are you planning to buy?
       </h6>
