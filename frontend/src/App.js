@@ -5,6 +5,9 @@ import Home from "./components/Home/Home";
 import NewRecommendation from "./components/NewRecommendation/NewRecommendation";
 import Question from "./components/Questions/Question";
 import Recommendation from "./components/Recommendation/Recommendation";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+
 
 function App() {
   return (
@@ -16,7 +19,11 @@ function App() {
         <Route path="/newreco" element={<NewRecommendation />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+
       </Routes>
+      
     </>
   );
 }
