@@ -1,11 +1,36 @@
-.footer{
+/* .footer{
     margin-top:15rem;
     
-}
+} */
 .logoimage{
     font-size:1vw;
 }
 .link-content{
    position:relative;
  left:18em;
+}
+
+.footer_top{
+    justify-content: space-around;
+}
+
+.logos_class:hover{
+    color: grey !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 991px) {
+    .footer_top{
+        
+        justify-content: space-between  !important;
+    }
+
+}
+
+@media (max-width: 440px) {
+    .footer_top{
+        
+        flex-direction: column !important;
+    }
+
 }
