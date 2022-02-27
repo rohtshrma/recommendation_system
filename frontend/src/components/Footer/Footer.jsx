@@ -15,95 +15,7 @@ import {
 const Footer = () => {
   return (
     <>
-{/* <MDBFooter bgColor='black' className='text-white text-center text-lg-left'>
-      <MDBContainer className='p-4'>
-        <MDBRow>
-          
 
-
-          <MDBCol lg='4' md='12' className='mb-4 mb-md-0'>
-              <MDBRipple
-                rippleColor='light'
-                className='bg-image hover-overlay shadow-1-strong rounded'
-              >
-                <img src={logoImg} className='w-100' />
-                <a href='#!'>
-                  <div
-                    className='mask'
-                    style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }}
-                  ></div>
-                </a>
-              </MDBRipple>
-            </MDBCol>
-
-
-
-
-
-
-          <MDBCol lg='4' md='6' className='mb-4 mb-md-0 text-center	'>
-            <h5 className='text-uppercase'>Links</h5>
-
-            <ul className='list-unstyled mb-0'>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 1
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 2
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 3
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 666
-                </a>
-              </li>
-            </ul>
-          </MDBCol>
-
-          <MDBCol lg='4' md='6' className='mb-4 mb-md-0 text-center	'>
-            <h5 className='text-uppercase mb-0'>hello</h5>
-
-            <ul className='list-unstyled'>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 1
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 2
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 3
-                </a>
-              </li>
-              <li>
-                <a href='#!' className='text-white'>
-                  Link 4
-                </a>
-              </li>
-            </ul>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        &copy; {new Date().getFullYear()} Copyright:{' '}
-        <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter> */}
 
     <MDBFooter bgColor='black' className='text-center text-lg-start text-muted footer' >
       <section className='d-flex justify-content-center justify-content-lg-between '>
@@ -114,17 +26,9 @@ const Footer = () => {
       <section className=''>
         <div className='container text-center text-md-start mt-5'>
           <div className='row mt-3'>
-            {/* <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 '>
-              <h6 className='text-uppercase fw-bold mb-4'>
-                <i className='fas fa-gem me-3'></i>Company name
-              </h6>
-              <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-              </p>
-            </div> */}
+          
 
-            <MDBCol lg='4' md='4' sm='12' className='mb-4 mb-md-0'>
+            {/* <MDBCol lg='4' md='4' sm='12' className='mb-4 mb-md-0'>
               <MDBRipple
                 rippleColor='light'
                 className='bg-image hover-overlay shadow-1-strong rounded'
@@ -137,27 +41,27 @@ const Footer = () => {
                   ></div>
                 </a>
               </MDBRipple>
-            </MDBCol>
+            </MDBCol> */}
 
-            <div className='col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 text-white'>
-              <h6 className='text-uppercase fw-bold mb-4'>Important Links</h6>
-              <p>
-                <a href='#!' className='text-reset'>
+            <div className=' col-md-12 col-lg-12 col-xl-12 mx-auto mb-4 text-white d-flex footer_top'>
+              {/* <h6 className='text-uppercase fw-bold mb-4'>Important Links</h6> */}
+              <p className='logos_class'>
+                <a href='#!' className='text-reset logos_class'>
                   Home
                 </a>
               </p>
-              <p>
-                <a href='#!' className='text-reset'>
+              <p className='logos_class'>
+                <a href='#!' className='text-reset logos_class'>
                   About Us
                 </a>
               </p>
-              <p>
-                <a href='#!' className='text-reset'>
+              <p className='logos_class'>
+                <a href='#!' className='text-reset logos_class'>
                   Services
                 </a>
               </p>
-              <p>
-                <a href='#!' className='text-reset'>
+              <p className='logos_class'>
+                <a href='#!' className='text-reset logos_class'>
                   Contact Us
                 </a>
               </p>
@@ -165,7 +69,7 @@ const Footer = () => {
 
            
 
-            <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white'>
+            {/* <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white'>
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
                 <i className='fas fa-home me-3'></i> New York, NY 10012, US
@@ -180,10 +84,33 @@ const Footer = () => {
               <p>
                 <i className='fas fa-print me-3'></i> + 01 234 567 89
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
+
+<section>
+<div className='text-white ' >
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-facebook-f'></i>
+          </a>
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-twitter'></i>
+          </a>
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-google'></i>
+          </a>
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-instagram'></i>
+          </a>
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-linkedin'></i>
+          </a>
+          <a href='' className='me-4 text-reset logos_class'>
+            <i className='fab fa-github'></i>
+          </a>
+        </div>
+</section>
 
       <div className='text-center p-4 text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', display:'flex',justifyContent:'center' }}>
         © 2021 Copyright:
@@ -191,7 +118,7 @@ const Footer = () => {
           fastrivi.com
         </a>
 
-        <div className='text-white link-content' >
+        {/* <div className='text-white link-content' >
           <a href='' className='me-4 text-reset'>
             <i className='fab fa-facebook-f'></i>
           </a>
@@ -210,7 +137,7 @@ const Footer = () => {
           <a href='' className='me-4 text-reset'>
             <i className='fab fa-github'></i>
           </a>
-        </div>
+        </div> */}
       </div>
     </MDBFooter>
     

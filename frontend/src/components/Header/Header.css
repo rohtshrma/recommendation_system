@@ -104,10 +104,21 @@
   margin-bottom: 20px;
 }
 
+.static-slider10{
+  background-size: 85% 95% !important;
 }
+}
+
+@media (max-width:767px) {
+.static-slider10{
+  background-size: 90% 85% !important;
+}
+}
+
+
 @media (max-width: 600px) {
 .buttons_grid{
- margin-left: 6% !important; 
+ margin-left: 7% !important; 
 }
 
 .static-slider10{
@@ -122,9 +133,18 @@
 }
 }
 
+@media (max-width: 500px) {
+  .static-slider10{
+    background-size: 100% 55% !important;
+  }
+  }
+
 @media (max-width: 320px) {
   .static-slider10 .title {
     font-size: 25px !important;
+  }
+  .static-slider10{
+    background-size: 100% 55% !important;
   }
 }
 

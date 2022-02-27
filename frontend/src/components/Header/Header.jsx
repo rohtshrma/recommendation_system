@@ -22,7 +22,7 @@ function Header() {
           // boxShadow: "0 0 10px 10px grey",
           // marginBottom: "30px",
           backgroundRepeat: "no-repeat",
-          backgroundSize: " 80% 90%",
+          backgroundSize: " 75% 95%",
         }}
       >
         <div className="container">

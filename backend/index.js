@@ -26,9 +26,10 @@ mongoose.connect(CONNECTION_URL, {
 const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
-const productdata = [];
+
 
 const updateProduct = (req, res) => {
+  const productdata = [];
   const doc = new GoogleSpreadsheet(
     "1m3zWmEqMXc2A9EiRCXC9N627tqsSuNSI7Dpe0-EofGQ"
   );
