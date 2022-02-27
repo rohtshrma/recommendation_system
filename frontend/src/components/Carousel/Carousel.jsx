@@ -43,7 +43,7 @@ const Carousel = () => {
               color="primary"
               onClick={() => navigate("/question/refrigerator")}
             >
-              Add to cart
+              Choose Best
             </Button>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Carousel = () => {
               color="primary"
               onClick={() => navigate("/question/refrigerator")}
             >
-              Add to cart
+              Choose Best
             </Button>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Carousel = () => {
               color="primary"
               onClick={() => navigate("/question/refrigerator")}
             >
-              Add to cart
+              Choose Best
             </Button>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Carousel = () => {
               color="primary"
               onClick={() => navigate("/question/refrigerator")}
             >
-              Add to cart
+              Choose Best
             </Button>
           </div>
         </div>
@@ -104,7 +104,7 @@ const Carousel = () => {
               color="primary"
               onClick={() => navigate("/question/refrigerator")}
             >
-              Add to cart
+              Choose Best
             </Button>
           </div>
         </div>
