@@ -54,6 +54,7 @@ function Header() {
         className=" mb-3 buttons_grid"
         style={{ margin: "0 0 0 2%" }}
       >
+      <Grid  md={1} ></Grid>
         <Grid xs={12} sm={6} md={2} className="btn_cont">
           <Button
             variant="contained"
@@ -63,10 +64,10 @@ function Header() {
             Television
           </Button>
         </Grid>
-        <Grid xs={12} sm={6} md={3} className="btn_cont">
+        <Grid xs={12} sm={6} md={2} className="btn_cont " >
           <Button
             variant="contained"
-            className="btn-classes"
+            className="btn-classes "
             onClick={() => navigate("/question/refrigerator")}
           >
             Washing Machine
@@ -81,7 +82,7 @@ function Header() {
             Micro Oven
           </Button>
         </Grid>
-        <Grid xs={12} sm={6} md={3} className="btn_cont">
+        <Grid xs={12} sm={6} md={2} className="btn_cont">
           <Button
             variant="contained"
             className="btn-classes"
@@ -99,6 +100,7 @@ function Header() {
             Refrigerator
           </Button>
         </Grid>
+        <Grid  md={1} ></Grid>
       </Grid>
     </>
   );

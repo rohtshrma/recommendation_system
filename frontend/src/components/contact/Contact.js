@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
   return (
    <>
-       <h1>contact us page</h1>
+       <h1 style={{textAlign:"center", marginTop:"100px",color:"gray"}}>Contact Us</h1>
    </>
   )
 }
