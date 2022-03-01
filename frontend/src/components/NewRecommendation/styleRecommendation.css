@@ -81,7 +81,7 @@ hr {
   height: 0 !important;
 }
 p {
-  margin: 4px 0 !important;
+  margin: 4px 0;
 }
 /* .product_list {
   padding: 0 20px;

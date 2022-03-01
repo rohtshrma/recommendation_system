@@ -22,8 +22,7 @@ function NewRecommendation() {
   const [products, setProducts] = useState(null);
   const getProduct = async (ans, product) => {
     // console.log(ans1, ans2, ans3);
-    
-    const apiUrl = `${process.env.REACT_APP_API_URL}/answer/${ans}/Refrigerator`;
+    const apiUrl = `${process.env.REACT_APP_API_URL}/answer/${ans}/refrigerator`;
     const { data } = await axios.get(apiUrl);
     console.log(data);
     setProducts(data);
