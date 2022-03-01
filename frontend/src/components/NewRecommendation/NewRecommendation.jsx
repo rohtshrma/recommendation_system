@@ -113,21 +113,28 @@ function NewRecommendation() {
                         alt="Fridge"
                         style={{ width: "80px", height: "200px" }}
                       />
+                      
                       <p
                         style={{
                           color: "black",
-                          fontWeight: "600",
-                          fontSize: "18px",
+                          fontWeight: "700",
+                          fontSize: "10px",
+                          fontFamily:"Gill Sans Extrabold",
+                          textIndent:"20px",
+                          textAlign:"center"
+                          
                         }}
                       >
                         {product.ProductName}
                       </p>
+                     <hr />
                     </div>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         height: "100px",
+                        marginTop:"10px"
                       }}
                     >
                       {product.Flipkarturl && (

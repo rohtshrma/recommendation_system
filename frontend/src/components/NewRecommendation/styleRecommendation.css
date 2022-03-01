@@ -27,12 +27,15 @@
   font-weight: 600;
   font-size: 3vw;
   color: black;
+ 
 }
+
 @media only screen and (max-width: 600px) {
   .properties_title {
     display: none;
   }
 }
+
 @media screen and (min-width: 700px) {
   .properties {
     font-size: 20px;
@@ -40,7 +43,7 @@
 }
 /* abrar css */
 .left_recom {
-  margin-top: 120px;
+  margin-top: 150px;
   height: 270px;
   color: gray;
 }
