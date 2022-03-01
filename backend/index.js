@@ -26,8 +26,6 @@ mongoose.connect(CONNECTION_URL, {
 const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
 
-
-
 const updateProduct = (req, res) => {
   const productdata = [];
   const doc = new GoogleSpreadsheet(
@@ -142,6 +140,7 @@ app.get("/answer/:combination/:product", (req, res) => {
           console.log("error happened", error);
         });
     } else {
+      console.log("Hello");
       Formdata.find({
         Combination: req.params.combination,
         Product:

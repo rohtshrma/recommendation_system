@@ -8,7 +8,6 @@
 }
 .mainContainer {
   padding: 20px;
-  
 }
 button {
   width: 90%;
@@ -71,6 +70,7 @@ button {
 } */
 .video {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 5px;
   justify-content: space-between;
