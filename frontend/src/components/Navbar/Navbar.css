@@ -151,9 +151,10 @@
   }
 } */
 
+
 /* new */
 .navbar {
-  background: #0164c9;
+  background:#0164c9;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -188,10 +189,13 @@
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
+  
 }
 
 .nav-links:hover {
-  color: white;
+  background-color: #6d76f7;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
 }
 
 .fa-bars {
@@ -234,14 +238,15 @@
   .nav-links {
     text-align: center;
     padding: 2rem;
+    
     width: 100%;
     display: table;
   }
 
-  /* .nav-links:hover {
+  .nav-links:hover {
     background-color: #7577fa;
     border-radius: 0;
-  } */
+  }
 
   .navbar-logo {
     position: absolute;
@@ -279,14 +284,17 @@
   }
 
   .nav-links-mobile:hover {
-    color: white;
+    background: #fff;
+    color: #6568f4;
+    transition: 250ms;
   }
 
   Button {
     display: none;
   }
 }
-.company_logo {
+.company_logo{
   width: 120px;
   height: 40px;
+  
 }
