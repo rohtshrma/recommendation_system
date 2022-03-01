@@ -6,6 +6,7 @@
 
 .btn-classes{
   font-size: 11px !important;
+  font-weight:600 !important;
   box-shadow: 0 5px 5px rgb(139, 135, 135) !important;
 
 }
@@ -13,6 +14,13 @@
   font-size: 30px;
   font-weight: 700;
   /* font-family: "Sedgwick Ave", cursive; */
+}
+/* 
+.buttons_grid{
+  margin-left: 10%;
+} */
+.spec_style{
+  width: 70% !important;
 }
 
 /* .bannerImage{
