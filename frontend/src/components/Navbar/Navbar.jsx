@@ -27,7 +27,9 @@ function Navbar() {
       </nav> */}
       <nav className="navbar">
         <h1 className="navbar-logo">
-          <img src={logoImg} className="company_logo" alt="Logo" />
+          <a href="/">
+            <img src={logoImg} className="company_logo" alt="Logo" />
+          </a>
         </h1>
         <div className="menu-icon" onClick={handleClick}>
           <i className={active ? "fas fa-times" : "fas fa-bars"}></i>

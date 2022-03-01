@@ -113,56 +113,55 @@ function NewRecommendation() {
                         alt="Fridge"
                         style={{ width: "80px", height: "200px" }}
                       />
-                      
-                      <p
-                        style={{
-                          color: "black",
-                          fontWeight: "700",
-                          fontSize: "10px",
-                          fontFamily:"Gill Sans Extrabold",
-                          textIndent:"20px",
-                          textAlign:"center"
-                          
-                        }}
-                      >
-                        {product.ProductName}
-                      </p>
-                     <hr />
+
+                      <a href={product.Amazonurl} target="_blank">
+                        <p
+                          style={{
+                            color: "black",
+                            fontWeight: "700",
+                            fontSize: "12px",
+                            fontFamily: "Gill Sans Extrabold",
+                            textIndent: "20px",
+                            textAlign: "center",
+                            height: "50px",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {product.ProductName}
+                        </p>
+                      </a>
+
+                      <hr />
                     </div>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         height: "100px",
-                        marginTop:"10px"
+                        marginTop: "10px",
                       }}
                     >
-                      {product.Flipkarturl && (
-                        <button
-                          className={classes.FlipkartClass}
-                          href={product.Flipkarturl}
-                          target="_blank"
-                        >
-                          Flipkart
-                        </button>
-                      )}
                       {product.Amazonurl && (
-                        <button
-                          className={classes.AmazonClass}
-                          href={product.Amazonurl}
-                          target="_blank"
-                        >
-                          Amazon
-                        </button>
+                        <a href={product.Amazonurl} target="_blank">
+                          <button className={classes.AmazonClass}>
+                            Amazon
+                          </button>
+                        </a>
                       )}
+                      {product.Flipkarturl && (
+                        <a href={product.Flipkarturl} target="_blank">
+                          <button className={classes.FlipkartClass}>
+                            Flipkart
+                          </button>
+                        </a>
+                      )}
+
                       {product.Relianceurl && (
-                        <button
-                          className={classes.RelianceClass}
-                          href={product.Relianceurl}
-                          target="_blank"
-                        >
-                          Reliance
-                        </button>
+                        <a href={product.Relianceurl} target="_blank">
+                          <button className={classes.RelianceClass}>
+                            Reliance
+                          </button>
+                        </a>
                       )}
                     </div>
                     <div

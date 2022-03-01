@@ -27,7 +27,6 @@
   font-weight: 600;
   font-size: 3vw;
   color: black;
- 
 }
 
 @media only screen and (max-width: 600px) {
@@ -44,7 +43,7 @@
 /* abrar css */
 .left_recom {
   margin-top: 150px;
-  height: 270px;
+  height: 274px;
   color: gray;
 }
 
@@ -83,9 +82,6 @@ hr {
 p {
   margin: 4px 0;
 }
-/* .product_list {
-  padding: 0 20px;
-  width: 15vw;
-  background-color: #80808014;
-  margin: 4px 0;
-} */
+.product_list {
+  margin: 1px 0;
+}
