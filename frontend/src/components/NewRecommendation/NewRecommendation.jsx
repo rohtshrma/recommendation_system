@@ -22,6 +22,7 @@ function NewRecommendation() {
   const [products, setProducts] = useState(null);
   const getProduct = async (ans, product) => {
     // console.log(ans1, ans2, ans3);
+    
     const apiUrl = `${process.env.REACT_APP_API_URL}/answer/${ans}/Refrigerator`;
     const { data } = await axios.get(apiUrl);
     console.log(data);
@@ -113,21 +114,28 @@ function NewRecommendation() {
                         alt="Fridge"
                         style={{ width: "80px", height: "200px" }}
                       />
+                      
                       <p
                         style={{
                           color: "black",
-                          fontWeight: "600",
-                          fontSize: "18px",
+                          fontWeight: "700",
+                          fontSize: "10px",
+                          fontFamily:"Gill Sans Extrabold",
+                          textIndent:"20px",
+                          textAlign:"center"
+                          
                         }}
                       >
-                        {product.Product}
+                        {product.ProductName}
                       </p>
+                     <hr />
                     </div>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "column",
                         height: "100px",
+                        marginTop:"10px"
                       }}
                     >
                       {product.Flipkarturl && (
