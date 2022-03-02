@@ -22,7 +22,7 @@ function NewRecommendation() {
   const [products, setProducts] = useState(null);
   const getProduct = async (ans, product) => {
     // console.log(ans1, ans2, ans3);
-    const apiUrl = `${process.env.REACT_APP_API_URL}/answer/${ans}/refrigerator`;
+    const apiUrl = `${process.env.REACT_APP_API_URL}/answer/${ans}/${product}`;
     const { data } = await axios.get(apiUrl);
     console.log(data);
     setProducts(data);
@@ -51,23 +51,31 @@ function NewRecommendation() {
             <h2 className="properties_title">Product Specification</h2>
           </div>
           <div className="product_spec">
-            <div className="product_list">
+            <hr />
+            <div className="product_list product_2">
               <p className="properties">Value for money</p>
             </div>
+            <hr />
 
             <div className="product_list">
               <p className="properties">Brand</p>
             </div>
-            <div className="product_list">
+            <hr />
+
+            <div className="product_list product_2">
               <p className="properties">Popular</p>
             </div>
+            <hr />
+
             <div className="product_list">
               <p className="properties">After Sales</p>
             </div>
+            <hr />
 
-            <div className="product_list">
+            <div className="product_list product_2">
               <p className="properties">Price</p>
             </div>
+            <hr />
 
             <div className="product_list">
               <p className="properties">Overall Score</p>
@@ -173,22 +181,33 @@ function NewRecommendation() {
                       }}
                     >
                       <hr />
-
-                      <p className="properties">{product.Valueformoney}</p>
+                      <div className="product_list product_2">
+                        <p className="properties">{product.Valueformoney}</p>
+                      </div>
                       <hr />
-                      <p className="properties">{product.Brand}</p>
-                      <hr />
+                      <div className="product_list ">
+                        <p className="properties">{product.Brand}</p>
+                      </div>
 
-                      <p className="properties">{product.Valueformoney}</p>
                       <hr />
+                      <div className="product_list product_2">
+                        <p className="properties">{product.Valueformoney}</p>
+                      </div>
 
-                      <p className="properties">{product.AfterSales}</p>
                       <hr />
+                      <div className="product_list ">
+                        <p className="properties">{product.AfterSales}</p>
+                      </div>
 
-                      <p className="properties">{product.Price}</p>
                       <hr />
+                      <div className="product_list product_2">
+                        <p className="properties">{product.Price}</p>
+                      </div>
 
-                      <p className="properties">{product.Score}</p>
+                      <hr />
+                      <div className="product_list ">
+                        <p className="properties">{product.Score}</p>
+                      </div>
                     </div>
                   </div>
                   // </Grid>

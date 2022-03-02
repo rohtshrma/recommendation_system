@@ -84,4 +84,9 @@ p {
 }
 .product_list {
   margin: 1px 0;
+  width: 100%;
+  text-align: center;
+}
+.product_2 {
+  background: #f6f6f6;
 }
