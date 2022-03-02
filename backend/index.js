@@ -1,14 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import fs from "fs";
 import csv from "csvtojson";
 import Formdata from "./models/Form.js";
 import Questiondata from "./models/Questions.js";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import { promisify } from "util";
-import creds from "./client_secret.js";
-import questioncreds from "./client_secret_questions.js"
+import 'dotenv/config'
+
 
 const csvFilePath = "Combinations.csv";
 const questionFilePath = "Questions.csv";
@@ -17,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const CONNECTION_URL =
-  "mongodb+srv://faiz:1234@cluster0.brqsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  process.env.MONGODB;
 const PORT = process.env.PORT || 8000;
 mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
@@ -34,8 +32,8 @@ const updateProduct = (req, res) => {
   );
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
-      client_email: creds.client_email,
-      private_key: creds.private_key,
+      client_email:process.env.CLIENT_EMAIL1,
+      private_key:process.env.CLIENT_ID1,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
@@ -47,7 +45,12 @@ const updateProduct = (req, res) => {
       var obj = {};
 
       for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
-        obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
+
+        if(rows[0]._sheet.headerValues[j] == "Product")
+        {
+          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j].toUpperCase()
+        }
+       
       }
       productdata.push(obj);
     }
@@ -86,8 +89,8 @@ const updateQuestions = (req, res) => {
   );
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
-      client_email: questioncreds.client_email,
-      private_key: questioncreds.private_key,
+      client_email:process.env.CLIENT_EMAIL2,
+      private_key: process.env.CLIENT_ID2,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
@@ -99,7 +102,11 @@ const updateQuestions = (req, res) => {
       var obj = {};
 
       for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
-        obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
+        if(rows[0]._sheet.headerValues[j] == "Product")
+        {
+          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j].toUpperCase()
+        }
+       
       }
       questiondata.push(obj);
     }
@@ -136,15 +143,20 @@ const updateQuestions = (req, res) => {
 
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({
-    Product:
-      req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
+    Product:req.params.product.toUpperCase(),
   })
     .then((data) => {
       if (data.length == 0) {
-        console.log("hit");
-        res.json("No data found");
+        res.json({
+          message:"No data found",
+          data:[]
+        });
+       
       } else {
-        res.json(data);
+        res.json({
+          message:"data found",
+          data:data
+        });
       }
     })
     .catch((error) => {
@@ -156,15 +168,14 @@ app.get("/answer/:combination/:product", (req, res) => {
   var coll = Formdata.find({
     Combination: req.params.combination,
     Product:
-      req.params.product.charAt(0).toUpperCase() + req.params.product.slice(1),
+      req.params.product.toUpperCase(),
   });
   coll.count().then((count) => {
     if (count == 0) {
       Formdata.find({
         Combination: "99999",
         Product:
-          req.params.product.charAt(0).toUpperCase() +
-          req.params.product.slice(1),
+          req.params.product.toUpperCase() 
       })
         .sort({ ValueforMoney: 1 })
 
@@ -179,8 +190,7 @@ app.get("/answer/:combination/:product", (req, res) => {
       Formdata.find({
         Combination: req.params.combination,
         Product:
-          req.params.product.charAt(0).toUpperCase() +
-          req.params.product.slice(1),
+          req.params.product.toUpperCase() 
       })
         .sort({ Score: -1 })
         .then((data) => {
