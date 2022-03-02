@@ -5,7 +5,7 @@ import csv from "csvtojson";
 import Formdata from "./models/Form.js";
 import Questiondata from "./models/Questions.js";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import 'dotenv/config'
+import 'dotenv/config';
 
 
 const csvFilePath = "Combinations.csv";
@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const CONNECTION_URL =
-  process.env.MONGODB;
+ process.env.MONGODB;
 const PORT = process.env.PORT || 8000;
 mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
@@ -33,7 +33,7 @@ const updateProduct = (req, res) => {
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
       client_email:process.env.CLIENT_EMAIL1,
-      private_key:process.env.CLIENT_ID1,
+      private_key:process.env.PRIVATE_KEY1 ,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
@@ -90,7 +90,7 @@ const updateQuestions = (req, res) => {
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
       client_email:process.env.CLIENT_EMAIL2,
-      private_key: process.env.CLIENT_ID2,
+      private_key:process.env.PRIVATE_KEY2 ,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
