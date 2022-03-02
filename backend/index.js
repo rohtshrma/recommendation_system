@@ -8,6 +8,7 @@ import Questiondata from "./models/Questions.js";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { promisify } from "util";
 import creds from "./client_secret.js";
+import questioncreds from "./client_secret_questions.js"
 
 const csvFilePath = "Combinations.csv";
 const questionFilePath = "Questions.csv";
@@ -78,26 +79,60 @@ const updateProduct = (req, res) => {
     message: "Data Updated",
   });
 };
-// // // Uncomment these code to save question into db
+const updateQuestions = (req, res) => {
+  const questiondata = [];
+  const doc = new GoogleSpreadsheet(
+    "1OkIUAcqkytMCtlW5rnJHGbiOlYk4QeN9jWxTurzAXzw"
+  );
+  async function accessSpreadsheet() {
+    await doc.useServiceAccountAuth({
+      client_email: questioncreds.client_email,
+      private_key: questioncreds.private_key,
+    });
 
-// Questiondata.deleteMany({})
-//   .then(function () {
-//     console.log("Question Data deleted"); // Success
-//   })
-//   .catch(function (error) {
-//     console.log(error); // Failure
-//   });
-// for (var i = 0; i < questiondata.length; i++) {
-//   const questiondata1 = new Questiondata(questiondata[i]);
+    await doc.loadInfo(); // loads document properties and worksheets
 
-//   questiondata1.save((error) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log("Question Successfully saved");
-//     }
-//   });
-// }
+    const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id]
+    const rows = await sheet.getRows();
+
+    for (let i = 0; i < rows.length; i++) {
+      var obj = {};
+
+      for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
+        obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
+      }
+      questiondata.push(obj);
+    }
+  }
+  accessSpreadsheet();
+
+  
+  //Uncomment these code to save data in db
+  Questiondata.deleteMany({})
+  .then(function () {
+    console.log("Question Data deleted"); // Success
+  })
+  .catch(function (error) {
+    console.log(error); // Failure
+  });
+
+  setTimeout(function () {
+    for (var i = 0; i < questiondata.length; i++) {
+      const questiondata1 = new Questiondata(questiondata[i]);
+      questiondata1.save((error) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Question data Successfully saved");
+        }
+      });
+    }
+  }, 5000);
+  res.json({
+    message: "Question Data Updated",
+  });
+};
+
 
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({
@@ -169,6 +204,7 @@ app.get("/savedata", (req, res) => {
     });
 });
 app.get("/update", updateProduct);
+app.get("/updatequestions",updateQuestions);
 
 app.get("/", (req, res) => {
   res.json("hello");

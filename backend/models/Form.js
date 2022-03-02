@@ -14,6 +14,7 @@ const formdata = new Schema({
   Flipkarturl: String,
   Relianceurl: String,
   Image: String,
+  Notes:String
 });
 const Formdata = mongoose.model("formdata", formdata);
 export default Formdata;
