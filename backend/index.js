@@ -101,7 +101,7 @@ const updateQuestions = (req, res) => {
       for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
         obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
       }
-      productdata.push(obj);
+      questiondata.push(obj);
     }
   }
   accessSpreadsheet();
