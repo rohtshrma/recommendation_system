@@ -48,14 +48,15 @@ function Question() {
       );
 
       console.log(data);
-      const noOfQuestion = data.length;
+
+      const noOfQuestion = data.data.length;
       const newAns = [];
       for (let i = 0; i < noOfQuestion; i++) {
         newAns.push("0");
       }
       setAns(newAns);
 
-      setQuestions(data);
+      setQuestions(data?.data);
     } catch (err) {
       console.log(err);
     }

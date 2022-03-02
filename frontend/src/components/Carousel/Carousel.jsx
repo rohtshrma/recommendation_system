@@ -35,13 +35,13 @@ const Carousel = () => {
         }}
       >
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/refrigerator")}>
+          <div class="card" onClick={() => navigate("/question/tv")}>
             <img className="img" src={tv} alt="Img1" />
             <h1>TV</h1>
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/tv")}
             >
               Choose Best
             </Button>
@@ -49,14 +49,14 @@ const Carousel = () => {
         </div>
 
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/refrigerator")}>
+          <div class="card" onClick={() => navigate("/question/washing")}>
             <img className="img" src={washing} alt="Img1" />
             <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/washing")}
             >
               Choose Best
             </Button>
@@ -64,14 +64,14 @@ const Carousel = () => {
         </div>
 
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/refrigerator")}>
+          <div class="card" onClick={() => navigate("/question/microoven")}>
             <img className="img" src={micro} alt="Img1" />
             <h1>Micro Oven</h1>
 
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/microoven")}
             >
               Choose Best
             </Button>
@@ -79,13 +79,13 @@ const Carousel = () => {
         </div>
 
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/refrigerator")}>
+          <div class="card" onClick={() => navigate("/question/ac")}>
             <img className="img " src={ac} alt="Img1" />
             <h1>AC</h1>
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/refrigerator")}
+              onClick={() => navigate("/question/ac")}
             >
               Choose Best
             </Button>

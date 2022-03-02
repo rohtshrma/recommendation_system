@@ -5,8 +5,7 @@ import csv from "csvtojson";
 import Formdata from "./models/Form.js";
 import Questiondata from "./models/Questions.js";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import 'dotenv/config';
-
+import "dotenv/config";
 
 const csvFilePath = "Combinations.csv";
 const questionFilePath = "Questions.csv";
@@ -14,8 +13,7 @@ const questionFilePath = "Questions.csv";
 const app = express();
 app.use(cors());
 app.use(express.json());
-const CONNECTION_URL =
- process.env.MONGODB;
+const CONNECTION_URL = process.env.MONGODB;
 const PORT = process.env.PORT || 8000;
 mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
@@ -32,8 +30,8 @@ const updateProduct = (req, res) => {
   );
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
-      client_email:process.env.CLIENT_EMAIL1,
-      private_key:process.env.PRIVATE_KEY1 ,
+      client_email: process.env.CLIENT_EMAIL1,
+      private_key: process.env.PRIVATE_KEY1,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
@@ -45,12 +43,12 @@ const updateProduct = (req, res) => {
       var obj = {};
 
       for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
-
-        if(rows[0]._sheet.headerValues[j] == "Product")
-        {
-          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j].toUpperCase()
+        if (rows[0]._sheet.headerValues[j] == "Product") {
+          obj[rows[0]._sheet.headerValues[j]] =
+            rows[i]._rawData[j].toUpperCase();
+        } else {
+          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
         }
-       
       }
       productdata.push(obj);
     }
@@ -89,8 +87,8 @@ const updateQuestions = (req, res) => {
   );
   async function accessSpreadsheet() {
     await doc.useServiceAccountAuth({
-      client_email:process.env.CLIENT_EMAIL2,
-      private_key:process.env.PRIVATE_KEY2 ,
+      client_email: process.env.CLIENT_EMAIL2,
+      private_key: process.env.PRIVATE_KEY2,
     });
 
     await doc.loadInfo(); // loads document properties and worksheets
@@ -102,26 +100,26 @@ const updateQuestions = (req, res) => {
       var obj = {};
 
       for (let j = 0; j < rows[0]._sheet.headerValues.length; j++) {
-        if(rows[0]._sheet.headerValues[j] == "Product")
-        {
-          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j].toUpperCase()
+        if (rows[0]._sheet.headerValues[j] == "Product") {
+          obj[rows[0]._sheet.headerValues[j]] =
+            rows[i]._rawData[j].toUpperCase();
+        } else {
+          obj[rows[0]._sheet.headerValues[j]] = rows[i]._rawData[j];
         }
-       
       }
       questiondata.push(obj);
     }
   }
   accessSpreadsheet();
 
-  
   //Uncomment these code to save data in db
   Questiondata.deleteMany({})
-  .then(function () {
-    console.log("Question Data deleted"); // Success
-  })
-  .catch(function (error) {
-    console.log(error); // Failure
-  });
+    .then(function () {
+      console.log("Question Data deleted"); // Success
+    })
+    .catch(function (error) {
+      console.log(error); // Failure
+    });
 
   setTimeout(function () {
     for (var i = 0; i < questiondata.length; i++) {
@@ -140,22 +138,20 @@ const updateQuestions = (req, res) => {
   });
 };
 
-
 app.get("/getquestions/:product", (req, res) => {
   Questiondata.find({
-    Product:req.params.product.toUpperCase(),
+    Product: req.params.product.toUpperCase(),
   })
     .then((data) => {
       if (data.length == 0) {
         res.json({
-          message:"No data found",
-          data:[]
+          message: "No data found",
+          data: [],
         });
-       
       } else {
         res.json({
-          message:"data found",
-          data:data
+          message: "data found",
+          data: data,
         });
       }
     })
@@ -167,15 +163,13 @@ app.get("/getquestions/:product", (req, res) => {
 app.get("/answer/:combination/:product", (req, res) => {
   var coll = Formdata.find({
     Combination: req.params.combination,
-    Product:
-      req.params.product.toUpperCase(),
+    Product: req.params.product.toUpperCase(),
   });
   coll.count().then((count) => {
     if (count == 0) {
       Formdata.find({
         Combination: "99999",
-        Product:
-          req.params.product.toUpperCase() 
+        Product: req.params.product.toUpperCase(),
       })
         .sort({ ValueforMoney: 1 })
 
@@ -189,8 +183,7 @@ app.get("/answer/:combination/:product", (req, res) => {
       console.log("Hello");
       Formdata.find({
         Combination: req.params.combination,
-        Product:
-          req.params.product.toUpperCase() 
+        Product: req.params.product.toUpperCase(),
       })
         .sort({ Score: -1 })
         .then((data) => {
@@ -214,7 +207,7 @@ app.get("/savedata", (req, res) => {
     });
 });
 app.get("/update", updateProduct);
-app.get("/updatequestions",updateQuestions);
+app.get("/updatequestions", updateQuestions);
 
 app.get("/", (req, res) => {
   res.json("hello");
