@@ -224,11 +224,10 @@ function NewRecommendation() {
       </Grid>
       {products && (
         <div className="box_content" style={{ margin: "50px 30px 0 30px" }}>
-          <h4>Disclaimer:</h4>
+          <h4>Note:</h4>
           <p>{products[0].Notes}</p>
         </div>
       )}
-      <Footer />
     </div>
   );
 }

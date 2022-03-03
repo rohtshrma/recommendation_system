@@ -56,7 +56,7 @@ function Main({
                     {/* Do you have children in your home? */}
                     {data.Question}
                   </p>
-                  <img src={children_img} alt="" />
+                  {data.Image !== "" && <img src={data.Image} alt="Imag" />}
                   <div>
                     {data.Answer.map(
                       (option, index) =>
