@@ -112,32 +112,15 @@ const Footer = () => {
         </div>
 </section>
 
-      <div className='text-center p-4 text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', display:'flex',justifyContent:'center' }}>
+<div className='text-center p-1 text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', display:'flex',justifyContent:'center' }}>
+As an Amazon/Flipkart Associate I earn from qualifying purchases.        
+      </div>
+
+      <div className='text-center p-4  text-white' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)', display:'flex',justifyContent:'center' }}>
         © 2021 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
           fastrivi.com
         </a>
-
-        {/* <div className='text-white link-content' >
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-facebook-f'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-twitter'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-google'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-instagram'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-linkedin'></i>
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <i className='fab fa-github'></i>
-          </a>
-        </div> */}
       </div>
     </MDBFooter>
     
