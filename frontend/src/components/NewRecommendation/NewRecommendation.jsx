@@ -30,7 +30,6 @@ function NewRecommendation() {
   useEffect(() => {
     if (localStorage.getItem("questionData")) {
       const { ans, product } = JSON.parse(localStorage.getItem("questionData"));
-      // console.log(data);
       getProduct(ans, product);
       setFlag(true);
     }
@@ -182,31 +181,37 @@ function NewRecommendation() {
                     >
                       <hr />
                       <div className="product_list product_2">
-                        <p className="properties">{product.Valueformoney}</p>
+                        <p className="properties data_props">
+                          {product.Valueformoney}
+                        </p>
                       </div>
                       <hr />
                       <div className="product_list ">
-                        <p className="properties">{product.Brand}</p>
+                        <p className="properties data_props">{product.Brand}</p>
                       </div>
 
                       <hr />
                       <div className="product_list product_2">
-                        <p className="properties">{product.Valueformoney}</p>
+                        <p className="properties data_props">
+                          {product.Valueformoney}
+                        </p>
                       </div>
 
                       <hr />
                       <div className="product_list ">
-                        <p className="properties">{product.AfterSales}</p>
+                        <p className="properties data_props">
+                          {product.AfterSales}
+                        </p>
                       </div>
 
                       <hr />
                       <div className="product_list product_2">
-                        <p className="properties">{product.Price}</p>
+                        <p className="properties data_props">{product.Price}</p>
                       </div>
 
                       <hr />
                       <div className="product_list ">
-                        <p className="properties">{product.Score}</p>
+                        <p className="properties data_props">{product.Score}</p>
                       </div>
                     </div>
                   </div>
@@ -217,6 +222,12 @@ function NewRecommendation() {
           </Grid>
         )}
       </Grid>
+      {products && (
+        <div className="box_content" style={{ margin: "50px 30px 0 30px" }}>
+          <h4>Disclaimer:</h4>
+          <p>{products[0].Notes}</p>
+        </div>
+      )}
       <Footer />
     </div>
   );

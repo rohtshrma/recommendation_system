@@ -43,7 +43,7 @@
 /* abrar css */
 .left_recom {
   margin-top: 150px;
-  height: 274px;
+  height: 276px;
   color: gray;
 }
 
@@ -89,4 +89,7 @@ p {
 }
 .product_2 {
   background: #f6f6f6;
+}
+.data_props {
+  color: #000000ba;
 }
