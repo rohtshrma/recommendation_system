@@ -91,24 +91,24 @@ const Footer = () => {
 
 <section>
 <div className='text-white ' >
-          <a href='' className='me-4 text-reset logos_class'>
+          <a href='https://www.facebook.com/FastRivi-108332821794931' target="_blank" className='me-4 text-reset logos_class'>
             <i className='fab fa-facebook-f'></i>
           </a>
-          <a href='' className='me-4 text-reset logos_class'>
+          <a href='https://twitter.com/FastRivi' target="_blank" className='me-4 text-reset logos_class'>
             <i className='fab fa-twitter'></i>
           </a>
-          <a href='' className='me-4 text-reset logos_class'>
+          {/* <a href='' className='me-4 text-reset logos_class'>
             <i className='fab fa-google'></i>
-          </a>
-          <a href='' className='me-4 text-reset logos_class'>
+          </a> */}
+          <a href='https://www.instagram.com/fastrivi/' target="_blank" className='me-4 text-reset logos_class'>
             <i className='fab fa-instagram'></i>
           </a>
-          <a href='' className='me-4 text-reset logos_class'>
+          {/* <a href='' className='me-4 text-reset logos_class'>
             <i className='fab fa-linkedin'></i>
           </a>
           <a href='' className='me-4 text-reset logos_class'>
             <i className='fab fa-github'></i>
-          </a>
+          </a> */}
         </div>
 </section>
 
