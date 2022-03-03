@@ -167,6 +167,7 @@ app.get("/answer/:combination/:product", (req, res) => {
   });
   coll.count().then((count) => {
     if (count == 0) {
+      
       Formdata.find({
         Combination: "99999",
         Product: req.params.product.toUpperCase(),
