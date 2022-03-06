@@ -51,33 +51,33 @@ function NewRecommendation() {
           </div>
           <div className="product_spec">
             <hr />
-            <div className="product_list product_2">
-              <p className="properties">Value for money</p>
+            <div className="product_list">
+              <p className="properties1 properties">Value for money</p>
             </div>
             <hr />
 
             <div className="product_list">
-              <p className="properties">Brand</p>
+              <p className="properties1 properties">Brand</p>
             </div>
             <hr />
 
-            <div className="product_list product_2">
-              <p className="properties">Popular</p>
-            </div>
-            <hr />
-
-            <div className="product_list">
-              <p className="properties">After Sales</p>
-            </div>
-            <hr />
-
-            <div className="product_list product_2">
-              <p className="properties">Price</p>
+            <div className="product_list ">
+              <p className="properties1 properties">Popular</p>
             </div>
             <hr />
 
             <div className="product_list">
-              <p className="properties">Overall Score</p>
+              <p className="properties1 properties">After Sales</p>
+            </div>
+            <hr />
+
+            <div className="product_list ">
+              <p className="properties1 properties">Price</p>
+            </div>
+            <hr />
+
+            <div className="product_list">
+              <p className="properties1 properties">Overall Score</p>
             </div>
           </div>
         </Grid>
@@ -86,7 +86,6 @@ function NewRecommendation() {
           <Grid item xs={9} md={10} className="right_container">
             <OwlCarousel
               className="owl-theme"
-              nav
               stagePadding={30}
               responsive={{
                 0: {
@@ -115,11 +114,13 @@ function NewRecommendation() {
                         backgroundColor: "white ",
                       }}
                     >
-                      <img
-                        src={product.Image}
-                        alt="Fridge"
-                        style={{ width: "80px", height: "200px" }}
-                      />
+                      <div className="product_Image">
+                        <img
+                          src={product.Image}
+                          alt="Fridge"
+                          style={{ height: "200px" }}
+                        />
+                      </div>
 
                       <a href={product.Amazonurl} target="_blank">
                         <p

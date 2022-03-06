@@ -83,9 +83,9 @@ button {
 }
 
 .question-ans img {
-  height: 170px;
-  width: 230px;
-  margin-left: 30px;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
 }
 input[type="radio"] {
   margin-top: 10px;
