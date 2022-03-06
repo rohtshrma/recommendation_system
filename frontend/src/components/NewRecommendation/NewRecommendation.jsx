@@ -79,6 +79,7 @@ function NewRecommendation() {
             <div className="product_list">
               <p className="properties1 properties">Overall Score</p>
             </div>
+            <hr />
           </div>
         </Grid>
 
