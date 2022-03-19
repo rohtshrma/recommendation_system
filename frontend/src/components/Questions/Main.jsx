@@ -56,15 +56,7 @@ function Main({
                     {/* Do you have children in your home? */}
                     {data.Question}
                   </p>
-                  {data.Image !== "" && (
-                    <div className="product_Image">
-                      <img
-                        src={data.Image}
-                        alt="Imag"
-                        style={{ height: "315px" }}
-                      />
-                    </div>
-                  )}
+                  {data.Image !== "" && <img src={data.Image} alt="Imag" />}
 
                   <div>
                     {data.Answer.map(

@@ -19,6 +19,12 @@ mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+// Making Build Folder as Public
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 const data = await csv().fromFile(csvFilePath);
 const questiondata = await csv().fromFile(questionFilePath);
@@ -167,7 +173,6 @@ app.get("/answer/:combination/:product", (req, res) => {
   });
   coll.count().then((count) => {
     if (count == 0) {
-      
       Formdata.find({
         Combination: "99999",
         Product: req.params.product.toUpperCase(),
@@ -209,10 +214,6 @@ app.get("/savedata", (req, res) => {
 });
 app.get("/update", updateProduct);
 app.get("/updatequestions", updateQuestions);
-
-app.get("/", (req, res) => {
-  res.json("hello");
-});
 
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })

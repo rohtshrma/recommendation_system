@@ -49,14 +49,17 @@ const Carousel = () => {
         </div>
 
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/washing")}>
+          <div
+            class="card"
+            onClick={() => navigate("/question/washingmachine")}
+          >
             <img className="img" src={washing} alt="Img1" />
             <h1>Washing machine</h1>
             {/* <p class="price">$19.99</p> */}
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/washing")}
+              onClick={() => navigate("/question/washingmachine")}
             >
               Choose Best
             </Button>
@@ -64,14 +67,14 @@ const Carousel = () => {
         </div>
 
         <div className="carousel-box">
-          <div class="card" onClick={() => navigate("/question/microoven")}>
+          <div class="card" onClick={() => navigate("/question/microwave")}>
             <img className="img" src={micro} alt="Img1" />
-            <h1>Micro Oven</h1>
+            <h1>Microwave Oven</h1>
 
             <Button
               variant="contained"
               color="primary"
-              onClick={() => navigate("/question/microoven")}
+              onClick={() => navigate("/question/microwave")}
             >
               Choose Best
             </Button>

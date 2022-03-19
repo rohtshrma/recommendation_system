@@ -34,16 +34,10 @@ function Header() {
 
       {/* banner end */}
 
-      <h1
-        className=" title text-dark text-center font-weight-500 "
-        style={{ fontSize: "2vw" }}
-      >
+      <h1 className="heading_text title text-dark text-center font-weight-500">
         Get Product recommendation according to your Need
       </h1>
-      <h6
-        className=" text-dark text-center font-weight-bolder op-8 "
-        style={{ fontSize: "2vw" }}
-      >
+      <h6 className="heading_text text-dark text-center font-weight-bolder op-8">
         What are you planning to buy?
       </h6>
       {/* <a className="btn btn-outline-light rounded-pill btn-md mt-3" href=""><span>Do you Need Help?</span></a> */}
@@ -68,7 +62,7 @@ function Header() {
           <Button
             variant="contained"
             className="btn-classes "
-            onClick={() => navigate("/question/washing")}
+            onClick={() => navigate("/question/washingmachine")}
           >
             Washing Machine
           </Button>
@@ -77,9 +71,9 @@ function Header() {
           <Button
             variant="contained"
             className="btn-classes"
-            onClick={() => navigate("/question/microoven")}
+            onClick={() => navigate("/question/microwave")}
           >
-            Micro Oven
+            Microwave Oven
           </Button>
         </Grid>
         <Grid xs={12} sm={6} md={2} className="btn_cont">

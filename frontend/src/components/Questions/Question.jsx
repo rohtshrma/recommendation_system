@@ -43,9 +43,7 @@ function Question() {
 
   const getQuestions = async () => {
     try {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API_URL}/getquestions/${product}`
-      );
+      const { data } = await axios.get(`/getquestions/${product}`);
 
       console.log(data);
 

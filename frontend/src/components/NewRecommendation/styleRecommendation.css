@@ -32,10 +32,6 @@
 .properties1 {
   font-weight: bold;
 }
-.product_Image {
-  object-fit: cover;
-  padding: 0 20px;
-}
 
 @media only screen and (max-width: 600px) {
   .properties_title {
@@ -100,4 +96,22 @@ p {
 }
 .data_props {
   color: #000000ba;
+}
+
+.product_img {
+  height: 200px;
+}
+
+.microwave {
+  padding: 35px 0;
+}
+.tv {
+  padding: 10px;
+}
+.ac {
+  padding: 45px 10px;
+}
+
+.refrigerator {
+  padding: 0 45px;
 }
