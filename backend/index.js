@@ -5,7 +5,11 @@ import csv from "csvtojson";
 import Formdata from "./models/Form.js";
 import Questiondata from "./models/Questions.js";
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import path from "path";
 import "dotenv/config";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const csvFilePath = "Combinations.csv";
 const questionFilePath = "Questions.csv";
